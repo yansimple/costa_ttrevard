@@ -18,138 +18,87 @@
             --safe-bottom: env(safe-area-inset-bottom, 0px);
             --safe-top: env(safe-area-inset-top, 0px);
         }
-
         * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; margin:0; padding:0; }
         html,body { width:100%; height:100%; font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Inter',sans-serif; color:var(--text); background:var(--dark); overflow:hidden; -webkit-font-smoothing:antialiased; user-select:none; -webkit-user-select:none; }
         button,input { font:inherit; outline:none; -webkit-appearance:none; appearance:none; border:0; background:none; }
         a { color:inherit; text-decoration:none; }
-        .pink { color:var(--pink); }
-        .muted { color:var(--muted); }
-        .hidden { display:none !important; }
+        .pink { color:var(--pink); } .muted { color:var(--muted); } .hidden { display:none !important; }
 
-        /* TOP BAR */
         .top-bar { position:fixed; top:0; left:0; right:0; z-index:100; height:36px; padding-top:var(--safe-top); background:rgba(10,10,10,.9); border-bottom:0.5px solid var(--border); display:flex; align-items:center; justify-content:center; gap:6px; font-size:11px; font-weight:600; color:var(--muted); }
         .live-dot { width:6px; height:6px; border-radius:50%; background:#34c759; box-shadow:0 0 5px rgba(52,199,89,.6); animation:livePulse 2s infinite; }
         @keyframes livePulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
 
-        /* PAGES */
         .page { display:none; height:100vh; height:100dvh; overflow:hidden; padding:10px; padding-top:calc(36px + var(--safe-top) + 10px); padding-bottom:calc(10px + var(--safe-bottom)); }
         @supports (-webkit-touch-callout:none) { .page { height:-webkit-fill-available; } }
         .page.active { display:flex; flex-direction:column; align-items:center; justify-content:center; }
-        #video.active { display:block; padding:0; }
-        #final.active { display:block; padding:0; overflow:hidden; }
+        #video.active { display:block; padding:0; } #final.active { display:block; padding:0; overflow:hidden; }
 
-        /* BUTTONS */
         .btn-primary { width:100%; max-width:300px; min-height:46px; padding:12px 18px; margin:8px 0; border-radius:12px; background:linear-gradient(135deg,var(--pink),#ff5e7a); color:#fff; font-size:15px; font-weight:700; letter-spacing:-.02em; cursor:pointer; box-shadow:0 6px 20px rgba(255,45,85,.3); display:flex; align-items:center; justify-content:center; gap:4px; pointer-events:auto; touch-action:manipulation; transition:transform .15s; }
-        .btn-primary:active { transform:scale(.97); }
-        .btn-primary:disabled { opacity:.35; pointer-events:none; }
+        .btn-primary:active { transform:scale(.97); } .btn-primary:disabled { opacity:.35; pointer-events:none; }
 
         .coin-badge { display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#ffd60a,#ff9f0a); color:#000; font-weight:800; font-size:10px; }
         .coin-lg { width:24px; height:24px; font-size:12px; }
 
-        /* HOME */
-        #home { text-align:center; }
-        .brand-icon { width:44px; height:44px; border-radius:12px; background:#000; display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:12px; text-shadow:2px 0 #00f2ea,-2px 0 #ff0050; box-shadow:0 4px 16px rgba(0,242,234,.12); }
+        #home { text-align:center; } .brand-icon { width:44px; height:44px; border-radius:12px; background:#000; display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:12px; text-shadow:2px 0 #00f2ea,-2px 0 #ff0050; }
         #home h1 { font-size:clamp(20px,5vw,26px); font-weight:800; letter-spacing:-.03em; line-height:1.1; margin-bottom:4px; }
         .subtitle { font-size:13px; color:var(--muted); margin-bottom:14px; max-width:260px; }
         .input-glass { width:100%; max-width:300px; height:46px; padding:0 14px; border:0.5px solid var(--border); border-radius:12px; background:var(--card); color:var(--text); font-size:15px; margin-bottom:4px; }
-        .input-glass:focus { border-color:var(--pink); box-shadow:0 0 0 3px rgba(255,45,85,.1); }
-        .input-glass::placeholder { color:var(--muted); opacity:.6; }
+        .input-glass:focus { border-color:var(--pink); } .input-glass::placeholder { color:var(--muted); opacity:.6; }
         .safe-badge { display:inline-flex; align-items:center; gap:4px; margin-top:10px; padding:5px 10px; border-radius:14px; background:rgba(52,199,89,.1); border:0.5px solid rgba(52,199,89,.2); color:#34c759; font-size:10px; font-weight:600; }
 
-        /* SELECTED */
-        #selected { text-align:center; }
-        .avatar-ring { width:60px; height:60px; border-radius:50%; padding:2px; background:linear-gradient(135deg,var(--pink),var(--cyan)); margin-bottom:10px; }
+        #selected { text-align:center; } .avatar-ring { width:60px; height:60px; border-radius:50%; padding:2px; background:linear-gradient(135deg,var(--pink),var(--cyan)); margin-bottom:10px; }
         .avatar-inner { width:100%; height:100%; border-radius:50%; background:#1c1c1e; display:flex; align-items:center; justify-content:center; font-size:26px; font-weight:800; color:var(--pink); }
         #selected h1 { font-size:clamp(18px,4vw,24px); font-weight:800; letter-spacing:-.03em; line-height:1.15; margin-bottom:4px; }
         .verify-card { width:100%; max-width:340px; margin:0 auto 8px; padding:12px; background:var(--card); border:0.5px solid var(--border); border-radius:14px; text-align:left; }
         .verify-card h3 { font-size:11px; font-weight:700; letter-spacing:.05em; color:var(--pink); margin-bottom:6px; }
         .verify-bar { height:4px; border-radius:6px; background:rgba(255,255,255,.08); margin-bottom:8px; overflow:hidden; }
         .verify-bar-fill { height:100%; width:0%; border-radius:6px; background:linear-gradient(90deg,var(--pink),var(--cyan)); }
-        .verify-bar.running .verify-bar-fill { animation:fillBar 5s linear forwards; }
-        .verify-bar.done .verify-bar-fill { width:100%; }
+        .verify-bar.running .verify-bar-fill { animation:fillBar 5s linear forwards; } .verify-bar.done .verify-bar-fill { width:100%; }
         @keyframes fillBar { from{width:0} to{width:100%} }
-        .verify-check { display:flex; align-items:center; gap:6px; margin:5px 0; font-size:12px; font-weight:600; opacity:.4; transition:opacity .4s; }
-        .verify-check.done { opacity:1; }
-        .check-icon { width:16px; height:16px; min-width:16px; border-radius:50%; border:2px solid rgba(52,199,89,.3); display:flex; align-items:center; justify-content:center; color:#34c759; font-size:9px; }
-        .verify-check.done .check-icon { border-color:#34c759; background:rgba(52,199,89,.15); }
+        .verify-check { display:flex; align-items:center; gap:6px; margin:5px 0; font-size:12px; font-weight:600; opacity:.4; transition:opacity .4s; } .verify-check.done { opacity:1; }
+        .check-icon { width:16px; height:16px; min-width:16px; border-radius:50%; border:2px solid rgba(52,199,89,.3); display:flex; align-items:center; justify-content:center; color:#34c759; font-size:9px; } .verify-check.done .check-icon { border-color:#34c759; background:rgba(52,199,89,.15); }
         .stats-line { font-size:10px; color:var(--muted); margin-top:4px; display:flex; gap:8px; }
 
-        /* TIKTOK CONTAINER */
+        /* VIDEO */
         .tiktok-container { height:100vh; height:100dvh; display:flex; flex-direction:column; background:#000; max-width:500px; margin:0 auto; }
         @supports (-webkit-touch-callout:none) { .tiktok-container { height:-webkit-fill-available; } }
+        .tiktok-header { height:36px; min-height:36px; padding:0 8px; padding-top:var(--safe-top); display:flex; align-items:center; justify-content:space-between; background:rgba(0,0,0,.95); z-index:10; }
+        .tiktok-brand { display:flex; align-items:center; gap:5px; font-size:12px; } .tiktok-logo-sm { width:24px; height:24px; border-radius:5px; background:#000; display:flex; align-items:center; justify-content:center; font-size:12px; text-shadow:1px 0 #00f2ea,-1px 0 #ff0050; } .tiktok-header-sub { font-size:6px; letter-spacing:.06em; color:#888; font-weight:700; }
+        .tiktok-header-right { display:flex; gap:4px; align-items:center; } .tiktok-balance-pill { padding:3px 8px; border-radius:12px; background:rgba(255,255,255,.06); border:0.5px solid rgba(255,255,255,.1); font-size:10px; font-weight:700; display:flex; align-items:center; gap:2px; } .tiktok-avatar-sm { width:24px; height:24px; border-radius:50%; border:2px solid var(--pink); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:11px; background:#1c1c1e; }
 
-        .tiktok-header { height:36px; min-height:36px; padding:0 8px; padding-top:var(--safe-top); display:flex; align-items:center; justify-content:space-between; background:rgba(0,0,0,.95); z-index:10; border-bottom:0.5px solid rgba(255,255,255,.05); }
-        .tiktok-brand { display:flex; align-items:center; gap:5px; font-size:12px; }
-        .tiktok-logo-sm { width:24px; height:24px; border-radius:5px; background:#000; display:flex; align-items:center; justify-content:center; font-size:12px; text-shadow:1px 0 #00f2ea,-1px 0 #ff0050; }
-        .tiktok-header-sub { font-size:6px; letter-spacing:.06em; color:#888; font-weight:700; }
-        .tiktok-header-right { display:flex; gap:4px; align-items:center; }
-        .tiktok-balance-pill { padding:3px 8px; border-radius:12px; background:rgba(255,255,255,.06); border:0.5px solid rgba(255,255,255,.1); font-size:10px; font-weight:700; display:flex; align-items:center; gap:2px; }
-        .tiktok-avatar-sm { width:24px; height:24px; border-radius:50%; border:2px solid var(--pink); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:11px; background:#1c1c1e; }
+        .tiktok-video-area { flex:1; position:relative; overflow:hidden; background:#000; display:flex; align-items:center; justify-content:center; }
+        .video-wrapper { position:relative; width:100%; height:100%; display:flex; align-items:center; justify-content:center; padding:8px 12px; }
+        .video-wrapper video { width:100%; height:100%; object-fit:contain; background:#000; border-radius:8px; }
 
-        /* VIDEO AREA - ГЛАВНОЕ: ВИДЕО ВЛЕЗАЕТ ЦЕЛИКОМ */
-        .tiktok-video-area { flex:1; position:relative; overflow:hidden; background:#000; display:flex; align-items:center; justify-content:center; min-height:0; }
-        .tiktok-swiper { width:100%; height:100%; overflow-y:scroll; scroll-snap-type:y mandatory; -webkit-overflow-scrolling:touch; }
-        .tiktok-swiper::-webkit-scrollbar { display:none; }
-        .tiktok-slide { height:100%; scroll-snap-align:start; position:relative; display:flex; align-items:center; justify-content:center; background:#000; padding:8px 12px; }
-
-        /* ВИДЕО С ОТСТУПАМИ */
-        .video-wrapper { position:relative; width:100%; height:100%; max-width:calc(100vw - 24px); display:flex; align-items:center; justify-content:center; }
-        .tiktok-slide video { width:100%; height:100%; object-fit:contain; background:#000; border-radius:8px; }
-
-        /* PLAY BUTTON */
-        .play-overlay { position:absolute; inset:0; z-index:20; display:flex; flex-direction:column; align-items:center; justify-content:center; background:rgba(0,0,0,.25); cursor:pointer; border-radius:8px; }
+        .play-overlay { position:absolute; inset:8px 12px; z-index:20; display:flex; flex-direction:column; align-items:center; justify-content:center; background:rgba(0,0,0,.25); cursor:pointer; border-radius:8px; }
         .play-overlay.hidden { opacity:0; pointer-events:none; }
-        .play-btn { width:56px; height:56px; border-radius:50%; background:rgba(255,255,255,.9); display:flex; align-items:center; justify-content:center; font-size:22px; color:var(--pink); box-shadow:0 4px 20px rgba(0,0,0,.4); }
-        .play-label { color:#fff; font-weight:700; font-size:14px; margin-top:8px; text-shadow:0 1px 2px rgba(0,0,0,.5); }
+        .play-btn { width:56px; height:56px; border-radius:50%; background:rgba(255,255,255,.9); display:flex; align-items:center; justify-content:center; font-size:22px; color:var(--pink); }
+        .play-label { color:#fff; font-weight:700; font-size:14px; margin-top:8px; }
 
-        .tiktok-slide-info { position:absolute; left:20px; right:60px; bottom:20px; z-index:10; pointer-events:none; }
-        .tiktok-slide-info .author { font-weight:700; font-size:13px; margin-bottom:2px; }
-        .tiktok-slide-info .desc { font-size:11px; color:#ccc; line-height:1.2; }
-
-        .tiktok-side-actions { position:absolute; right:14px; bottom:70px; display:flex; flex-direction:column; align-items:center; gap:12px; z-index:10; }
-        .tiktok-side-btn { display:flex; flex-direction:column; align-items:center; gap:1px; color:#fff; font-size:9px; font-weight:600; cursor:pointer; }
-        .tiktok-side-btn:active { transform:scale(.9); }
-        .side-icon { width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,.12); display:flex; align-items:center; justify-content:center; font-size:18px; transition:all .2s; }
-        .tiktok-side-btn.liked .side-icon { background:var(--pink); animation:heartPop .3s ease; }
-        @keyframes heartPop { 0%{transform:scale(1)} 50%{transform:scale(1.3)} 100%{transform:scale(1)} }
-
-        .tiktok-progress-line { position:absolute; bottom:0; left:12px; right:12px; height:2px; background:rgba(255,255,255,.1); z-index:8; border-radius:1px; overflow:hidden; }
+        .tiktok-progress-line { position:absolute; bottom:8px; left:12px; right:12px; height:2px; background:rgba(255,255,255,.1); z-index:8; border-radius:1px; overflow:hidden; }
         .tiktok-progress-line-fill { height:100%; width:0%; background:var(--pink); border-radius:1px; transition:width .15s linear; }
 
-        /* BOTTOM PANEL */
-        .tiktok-bottom-panel { padding:5px 10px calc(5px + var(--safe-bottom)); background:rgba(0,0,0,.95); border-top:0.5px solid rgba(255,255,255,.05); }
+        .tiktok-bottom-panel { padding:5px 10px calc(5px + var(--safe-bottom)); background:rgba(0,0,0,.95); }
         .tiktok-mission-bar { display:flex; justify-content:space-between; align-items:center; padding:5px 8px; background:rgba(255,45,85,.08); border:0.5px solid rgba(255,45,85,.15); border-radius:8px; font-size:9px; margin-bottom:4px; }
-        .tiktok-mission-earn { padding:4px 8px; border-radius:10px; background:var(--pink); color:#fff; font-weight:700; font-size:9px; cursor:pointer; }
-        .tiktok-progress-dots { display:flex; justify-content:center; gap:3px; margin-bottom:4px; }
-        .tiktok-progress-dots .dot-seg { width:22px; height:2px; border-radius:1px; background:rgba(255,255,255,.1); }
-        .tiktok-progress-dots .dot-seg.on { background:var(--pink); }
+        .tiktok-mission-earn { padding:4px 8px; border-radius:10px; background:var(--pink); color:#fff; font-weight:700; font-size:9px; }
+        .tiktok-progress-dots { display:flex; justify-content:center; gap:3px; margin-bottom:4px; } .tiktok-progress-dots .dot-seg { width:22px; height:2px; border-radius:1px; background:rgba(255,255,255,.1); } .tiktok-progress-dots .dot-seg.on { background:var(--pink); }
         .tiktok-reactions-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; font-weight:700; font-size:11px; }
         .tiktok-reactions-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; }
 
         .tiktok-reaction-btn { padding:6px 2px; border:1px solid rgba(255,255,255,.12); border-radius:8px; background:rgba(255,255,255,.04); color:#fff; font-weight:700; font-size:8px; cursor:pointer; }
         .tiktok-reaction-btn b { display:block; font-size:16px; margin-bottom:1px; }
-        .tiktok-reaction-btn:disabled { opacity:.3; background:rgba(255,255,255,.02); animation:none; }
+        .tiktok-reaction-btn:disabled { opacity:.3; background:rgba(255,255,255,.02); }
         .tiktok-reaction-btn:not(:disabled) { animation:glowPulse 2s infinite; box-shadow:0 0 6px rgba(255,45,85,.2); }
-        .tiktok-reaction-btn:not(:disabled):nth-child(2){animation-delay:.3s}
-        .tiktok-reaction-btn:not(:disabled):nth-child(3){animation-delay:.6s}
-        .tiktok-reaction-btn:not(:disabled):nth-child(4){animation-delay:.9s}
-        .tiktok-reaction-btn:not(:disabled):nth-child(5){animation-delay:1.2s}
-        .tiktok-reaction-btn:not(:disabled):nth-child(6){animation-delay:1.5s}
+        .tiktok-reaction-btn:not(:disabled):nth-child(2){animation-delay:.3s} .tiktok-reaction-btn:not(:disabled):nth-child(3){animation-delay:.6s} .tiktok-reaction-btn:not(:disabled):nth-child(4){animation-delay:.9s} .tiktok-reaction-btn:not(:disabled):nth-child(5){animation-delay:1.2s} .tiktok-reaction-btn:not(:disabled):nth-child(6){animation-delay:1.5s}
         @keyframes glowPulse { 0%,100%{box-shadow:0 0 4px rgba(255,45,85,.1)} 50%{box-shadow:0 0 14px rgba(255,45,85,.4)} }
-        .tiktok-reaction-btn:active:not(:disabled) { transform:scale(.95); background:var(--pink); border-color:var(--pink); }
+        .tiktok-reaction-btn:active:not(:disabled) { transform:scale(.95); background:var(--pink); }
         .tiktok-reaction-btn.active { background:var(--pink); border-color:var(--pink); box-shadow:0 0 20px rgba(255,45,85,.6); animation:none; }
 
-        .tiktok-telegram-link { display:block; margin-top:4px; padding:5px; border-radius:6px; background:rgba(0,212,170,.06); border:0.5px solid rgba(0,212,170,.1); text-align:center; font-size:9px; font-weight:600; }
-        .tiktok-telegram-link a { color:var(--cyan); }
-
         /* SPIN */
-        #spin { text-align:center; }
-        #spin h2 { font-size:20px; font-weight:800; margin-bottom:2px; }
-        .spin-subtitle { color:var(--muted); font-size:12px; margin-bottom:8px; }
+        #spin { text-align:center; } #spin h2 { font-size:18px; font-weight:800; margin-bottom:2px; }
+        .spin-bonus-text { color:var(--cyan); font-size:11px; margin-bottom:8px; max-width:280px; line-height:1.3; }
         .spin-balance-card { width:100%; max-width:300px; padding:10px; background:var(--card); border:0.5px solid var(--border); border-radius:14px; margin-bottom:4px; }
-        .spin-balance-label { font-size:11px; color:var(--muted); margin-bottom:2px; }
-        .spin-balance-amount { font-size:24px; font-weight:800; }
+        .spin-balance-label { font-size:11px; color:var(--muted); margin-bottom:2px; } .spin-balance-amount { font-size:24px; font-weight:800; }
         .spin-live-badge { display:inline-flex; align-items:center; gap:3px; margin:4px 0; padding:3px 8px; border-radius:10px; background:rgba(255,45,85,.1); color:var(--pink); font-size:10px; font-weight:700; }
         .spin-result-card { width:100%; max-width:300px; padding:8px; border-radius:10px; background:rgba(255,45,85,.05); border:0.5px solid rgba(255,45,85,.12); font-weight:700; font-size:12px; margin-bottom:4px; }
         .spin-result-card small { color:var(--muted); }
@@ -159,81 +108,44 @@
         .wheel-pointer { width:0; height:0; margin:0 auto -8px; border-left:8px solid transparent; border-right:8px solid transparent; border-top:16px solid var(--pink); filter:drop-shadow(0 2px 4px rgba(255,45,85,.5)); position:relative; z-index:3; }
         .wheel-body { width:min(180px,35vh,60vw); height:min(180px,35vh,60vw); margin:0 auto; border-radius:50%; background:conic-gradient(var(--pink) 0 45deg,var(--cyan) 45deg 90deg,var(--pink) 90deg 135deg,var(--cyan) 135deg 180deg,var(--pink) 180deg 225deg,var(--cyan) 225deg 270deg,var(--pink) 270deg 315deg,var(--cyan) 315deg); border:5px solid rgba(255,255,255,.12); box-shadow:0 12px 30px rgba(0,0,0,.4); transition:transform 4s cubic-bezier(.15,.7,.2,1); position:relative; cursor:pointer; }
         .wheel-body::after { content:"2x"; position:absolute; inset:50%; width:32px; height:32px; margin:-16px 0 0 -16px; border-radius:50%; background:#1c1c1e; display:flex; align-items:center; justify-content:center; color:var(--pink); font-weight:800; z-index:2; border:1.5px solid rgba(255,255,255,.08); font-size:12px; }
-        .wheel-label { position:absolute; left:50%; top:50%; width:44px; margin-left:-22px; margin-top:-7px; text-align:center; color:#fff; font-size:11px; font-weight:800; text-shadow:0 1px 2px rgba(0,0,0,.4); z-index:1; transform-origin:22px 7px; }
-        .wheel-label:nth-child(1){transform:rotate(22.5deg) translateY(-56px) rotate(-22.5deg)}
-        .wheel-label:nth-child(2){transform:rotate(67.5deg) translateY(-56px) rotate(-67.5deg)}
-        .wheel-label:nth-child(3){transform:rotate(112.5deg) translateY(-56px) rotate(-112.5deg)}
-        .wheel-label:nth-child(4){transform:rotate(157.5deg) translateY(-56px) rotate(-157.5deg)}
-        .wheel-label:nth-child(5){transform:rotate(202.5deg) translateY(-56px) rotate(-202.5deg)}
-        .wheel-label:nth-child(6){transform:rotate(247.5deg) translateY(-56px) rotate(-247.5deg)}
-        .wheel-label:nth-child(7){transform:rotate(292.5deg) translateY(-56px) rotate(-292.5deg)}
-        .wheel-label:nth-child(8){transform:rotate(337.5deg) translateY(-56px) rotate(-337.5deg)}
+        .wheel-label { position:absolute; left:50%; top:50%; width:44px; margin-left:-22px; margin-top:-7px; text-align:center; color:#fff; font-size:11px; font-weight:800; z-index:1; transform-origin:22px 7px; }
+        .wheel-label:nth-child(1){transform:rotate(22.5deg) translateY(-56px) rotate(-22.5deg)} .wheel-label:nth-child(2){transform:rotate(67.5deg) translateY(-56px) rotate(-67.5deg)} .wheel-label:nth-child(3){transform:rotate(112.5deg) translateY(-56px) rotate(-112.5deg)} .wheel-label:nth-child(4){transform:rotate(157.5deg) translateY(-56px) rotate(-157.5deg)} .wheel-label:nth-child(5){transform:rotate(202.5deg) translateY(-56px) rotate(-202.5deg)} .wheel-label:nth-child(6){transform:rotate(247.5deg) translateY(-56px) rotate(-247.5deg)} .wheel-label:nth-child(7){transform:rotate(292.5deg) translateY(-56px) rotate(-292.5deg)} .wheel-label:nth-child(8){transform:rotate(337.5deg) translateY(-56px) rotate(-337.5deg)}
 
         /* FINAL */
         .app-shell { height:100vh; height:100dvh; overflow-y:auto; -webkit-overflow-scrolling:touch; display:flex; flex-direction:column; max-width:500px; margin:0 auto; }
         @supports (-webkit-touch-callout:none) { .app-shell { height:-webkit-fill-available; } }
         .final-header { position:sticky; top:0; z-index:50; height:36px; min-height:36px; padding:0 8px; padding-top:var(--safe-top); background:rgba(10,10,10,.95); border-bottom:0.5px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
-        .final-hero { text-align:center; padding:10px; }
-        .final-hero h3 { color:var(--pink); margin-bottom:1px; font-size:14px; }
-        .final-hero p { color:var(--muted); font-size:11px; }
+        .final-hero { text-align:center; padding:10px; } .final-hero h3 { color:var(--pink); margin-bottom:1px; font-size:14px; } .final-hero p { color:var(--muted); font-size:11px; }
         .final-video-wrap { aspect-ratio:9/16; width:min(260px,calc(100vw - 24px)); margin:0 auto 8px; border-radius:12px; overflow:hidden; background:#000; border:1px solid rgba(255,255,255,.04); max-height:40vh; }
         .final-reward-card { margin:0 10px 8px; padding:10px; border-radius:14px; background:linear-gradient(135deg,rgba(255,45,85,.06),rgba(0,212,170,.04)); border:0.5px solid var(--border); text-align:center; }
-        .final-reward-amount { font-size:22px; font-weight:800; color:var(--pink); }
-        .final-reward-card p { color:var(--muted); font-size:11px; margin-top:2px; }
-        .final-withdraw-btn { display:block; margin:0 10px 8px; padding:12px; border-radius:12px; background:linear-gradient(135deg,var(--cyan),#00b894); color:#000; font-weight:800; font-size:15px; text-align:center; animation:gentlePulse 2s infinite; box-shadow:0 4px 16px rgba(0,212,170,.25); }
+        .final-reward-amount { font-size:22px; font-weight:800; color:var(--pink); } .final-reward-card p { color:var(--muted); font-size:11px; margin-top:2px; }
+        .final-withdraw-btn { display:block; margin:0 10px 8px; padding:12px; border-radius:12px; background:linear-gradient(135deg,var(--cyan),#00b894); color:#000; font-weight:800; font-size:15px; text-align:center; animation:gentlePulse 2s infinite; }
         @keyframes gentlePulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.03)} }
         .tabs-bar { display:grid; grid-template-columns:repeat(3,1fr); margin:0 10px 6px; background:rgba(255,255,255,.03); border-radius:10px; padding:2px; }
-        .tab-btn { padding:6px 3px; border-radius:8px; background:transparent; color:var(--muted); font-weight:600; font-size:11px; cursor:pointer; }
-        .tab-btn.active { background:var(--card); color:#fff; }
-        .tab-panel { display:none; padding:0 10px; }
-        .tab-panel.active { display:block; }
-        .tab-heading { display:flex; justify-content:space-between; align-items:center; margin:4px 0; font-weight:800; font-size:14px; }
-        .live-tag { color:var(--cyan); font-size:10px; font-weight:700; }
-        .rank-item { display:flex; align-items:center; gap:8px; padding:8px; margin:3px 0; border-radius:12px; background:var(--card); border:0.5px solid var(--border); }
-        .rank-pos { width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--pink); color:#fff; font-weight:800; font-size:11px; }
-        .rank-pos.silver{background:#8e8e93} .rank-pos.bronze{background:#d69d4b}
-        .rank-info{flex:1;min-width:0} .rank-name{font-weight:700;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis} .rank-badge{font-size:9px;color:#34c759;font-weight:600} .rank-amount{font-weight:800;color:var(--pink);font-size:13px;text-align:right}
-        .withdraw-item{display:flex;align-items:center;justify-content:space-between;padding:8px;margin:3px 0;border-radius:12px;background:var(--card);border:0.5px solid var(--border)}
-        .withdraw-amount{font-weight:800;color:var(--cyan);font-size:13px}
-        .review-card-item{padding:10px;margin:3px 0;border-radius:12px;background:var(--card);border:0.5px solid var(--border)}
-        .review-card-item .stars{color:#ffd60a}
+        .tab-btn { padding:6px 3px; border-radius:8px; background:transparent; color:var(--muted); font-weight:600; font-size:11px; cursor:pointer; } .tab-btn.active { background:var(--card); color:#fff; }
+        .tab-panel { display:none; padding:0 10px; } .tab-panel.active { display:block; }
+        .tab-heading { display:flex; justify-content:space-between; align-items:center; margin:4px 0; font-weight:800; font-size:14px; } .live-tag { color:var(--cyan); font-size:10px; font-weight:700; }
+        .rank-item { display:flex; align-items:center; gap:8px; padding:8px; margin:3px 0; border-radius:12px; background:var(--card); border:0.5px solid var(--border); } .rank-pos { width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--pink); color:#fff; font-weight:800; font-size:11px; } .rank-pos.silver{background:#8e8e93} .rank-pos.bronze{background:#d69d4b} .rank-info{flex:1;min-width:0} .rank-name{font-weight:700;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis} .rank-badge{font-size:9px;color:#34c759;font-weight:600} .rank-amount{font-weight:800;color:var(--pink);font-size:13px;text-align:right}
+        .withdraw-item{display:flex;align-items:center;justify-content:space-between;padding:8px;margin:3px 0;border-radius:12px;background:var(--card);border:0.5px solid var(--border)} .withdraw-amount{font-weight:800;color:var(--cyan);font-size:13px}
+        .review-card-item{padding:10px;margin:3px 0;border-radius:12px;background:var(--card);border:0.5px solid var(--border)} .review-card-item .stars{color:#ffd60a}
         .green-banner{margin:6px 0;padding:8px;border-radius:10px;background:rgba(52,199,89,.05);border:0.5px solid rgba(52,199,89,.1);text-align:center;color:#34c759;font-weight:600;font-size:11px}
-        .review-videos-section{padding:10px}
-        .review-videos-section h3{font-weight:800;margin-bottom:6px;font-size:14px}
-        .review-video-strip{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding-bottom:14px}
-        .review-video-strip::-webkit-scrollbar{display:none}
-        .review-video-thumb{scroll-snap-align:start;position:relative;min-width:100px;aspect-ratio:9/16;border-radius:10px;overflow:hidden;background:#000;border:0.5px solid var(--border);cursor:pointer}
-        .review-video-thumb video{width:100%;height:100%;object-fit:cover}
-        .play-icon-sm{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2)}
-        .play-icon-sm::after{content:"▶";width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;color:var(--pink);font-size:11px}
 
-        /* MODAL */
-        .modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;padding:16px}
-        .modal-overlay.show{display:flex}
+        .modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;padding:16px} .modal-overlay.show{display:flex}
         .modal-dialog{width:min(280px,100%);padding:20px 16px;background:#1c1c1e;border-radius:18px;text-align:center;border:0.5px solid var(--border);box-shadow:0 16px 32px rgba(0,0,0,.5);animation:modalPop .35s ease}
         @keyframes modalPop{from{opacity:0;transform:scale(.9) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)}}
-        .modal-emoji{font-size:34px;margin-bottom:4px}
-        .modal-dialog h2{font-size:18px;font-weight:800;margin-bottom:2px}
-        .modal-reward{font-size:26px;font-weight:800;color:var(--pink);margin:6px 0}
+        .modal-emoji{font-size:34px;margin-bottom:4px} .modal-dialog h2{font-size:18px;font-weight:800} .modal-reward{font-size:26px;font-weight:800;color:var(--pink);margin:6px 0}
 
-        /* TOAST */
-        .toast-popup{position:fixed;left:10px;top:calc(44px + var(--safe-top));z-index:300;display:flex;align-items:center;gap:6px;min-width:180px;max-width:calc(100vw - 20px);padding:8px 12px;border-radius:12px;background:rgba(28,28,30,.95);border:0.5px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.4);transform:translateX(-120%);opacity:0;transition:transform .4s,opacity .4s;pointer-events:none}
-        .toast-popup.show{transform:translateX(0);opacity:1}
-        .toast-avatar{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--cyan));display:flex;align-items:center;justify-content:center}
-        .toast-avatar::after{content:"₡";width:13px;height:13px;border-radius:50%;background:#ffd60a;color:#000;font-size:8px;font-weight:800;display:flex;align-items:center;justify-content:center}
-        .toast-info{flex:1;min-width:0} .toast-name{font-weight:700;font-size:13px} .toast-location{font-size:10px;color:var(--muted)}
-        .toast-value{padding:5px 8px;border-radius:8px;background:rgba(255,45,85,.1);color:var(--pink);font-weight:800;font-size:13px;white-space:nowrap}
-
+        .toast-popup{position:fixed;left:10px;top:calc(44px + var(--safe-top));z-index:300;display:flex;align-items:center;gap:6px;min-width:180px;max-width:calc(100vw - 20px);padding:8px 12px;border-radius:12px;background:rgba(28,28,30,.95);border:0.5px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.4);transform:translateX(-120%);opacity:0;transition:transform .4s,opacity .4s;pointer-events:none} .toast-popup.show{transform:translateX(0);opacity:1}
+        .toast-avatar{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--cyan));display:flex;align-items:center;justify-content:center} .toast-avatar::after{content:"₡";width:13px;height:13px;border-radius:50%;background:#ffd60a;color:#000;font-size:8px;font-weight:800;display:flex;align-items:center;justify-content:center} .toast-info{flex:1;min-width:0} .toast-name{font-weight:700;font-size:13px} .toast-location{font-size:10px;color:var(--muted)} .toast-value{padding:5px 8px;border-radius:8px;background:rgba(255,45,85,.1);color:var(--pink);font-weight:800;font-size:13px;white-space:nowrap}
         .emoji-float{position:absolute;z-index:30;font-size:36px;pointer-events:none;animation:floatUp 1s ease-out forwards}
-        @keyframes floatUp{0%{opacity:1;transform:translateY(0) scale(.3)}30%{opacity:1;transform:translateY(-20px) scale(1.2)}100%{opacity:0;transform:translateY(-60px) scale(.6)}}
-        .heart-burst{position:absolute;z-index:30;pointer-events:none;font-size:44px;animation:burst .7s ease-out forwards}
-        @keyframes burst{0%{opacity:1;transform:scale(0)}40%{opacity:1;transform:scale(1.3)}100%{opacity:0;transform:scale(1.6)}}
+        @keyframes floatUp{0%{opacity:1;transform:translateY(0) scale(.3)}30%{transform:translateY(-20px) scale(1.2)}100%{opacity:0;transform:translateY(-60px) scale(.6)}}
     </style>
 </head>
 <body>
 
 <div class="top-bar"><span class="live-dot"></span><b id="online">5 182</b> miembros en línea</div>
 
+<!-- HOME -->
 <main id="home" class="page active">
     <div class="brand-icon">♪</div>
     <h1>¡Bienvenido! ¿Cuál es tu <span class="pink">nombre</span>?</h1>
@@ -243,6 +155,7 @@
     <div class="safe-badge">🔒 Sesión segura • Acceso verificado</div>
 </main>
 
+<!-- SELECTED -->
 <main id="selected" class="page">
     <div class="avatar-ring"><div class="avatar-inner" id="initial">N</div></div>
     <h1><span id="who">Nombre</span>, Has Sido<br><span class="pink">Seleccionado</span></h1>
@@ -259,70 +172,81 @@
     <div class="stats-line"><span>♙ 5 302 en línea</span><span class="pink">◷ 2 lugares</span></div>
 </main>
 
+<!-- VIDEO -->
 <main id="video" class="page">
     <div class="tiktok-container">
         <header class="tiktok-header">
             <div class="tiktok-brand"><div class="tiktok-logo-sm">♪</div><div><b>TikTok</b><div class="tiktok-header-sub">RECOMPENSAS</div></div></div>
             <div class="tiktok-header-right"><div class="tiktok-balance-pill"><span class="coin-badge">₡</span> <span id="bal">0</span></div><div class="tiktok-avatar-sm" id="userBadge">U</div></div>
         </header>
-        <div class="tiktok-video-area"><div class="tiktok-swiper" id="tiktokSwiper"></div></div>
+        <div class="tiktok-video-area" id="videoArea">
+            <!-- single video, меняется через JS -->
+            <div class="video-wrapper" id="videoWrapper">
+                <video id="currentVideo" playsinline webkit-playsinline preload="metadata" loop="false" muted="false"></video>
+                <div class="play-overlay" id="playOverlay"><div class="play-btn">▶</div><div class="play-label">Toca para reproducir</div></div>
+                <div class="tiktok-progress-line"><div class="tiktok-progress-line-fill" id="progressFill"></div></div>
+            </div>
+        </div>
         <div class="tiktok-bottom-panel">
-            <div class="tiktok-mission-bar"><div><b>Misión diaria</b><br><small>Califica <span id="videoCounter">1/4</span></small></div><button class="tiktok-mission-earn">₡ +<span id="rewardTop">5000</span></button></div>
+            <div class="tiktok-mission-bar"><div><b>Misión diaria</b><br><small>Califica <span id="videoCounter">1/4</span></small></div><button class="tiktok-mission-earn">₡ +<span id="rewardTop">1000</span></button></div>
             <div class="tiktok-progress-dots" id="progress"></div>
             <div class="tiktok-reactions-header"><span>Toca para ganar <span class="coin-badge">₡</span></span><small id="readyText">Bloqueado</small></div>
             <div class="tiktok-reactions-grid" id="choices"></div>
-            <div class="tiktok-telegram-link">Únete: <a href="https://karinapotoy.world/l/xsidoyrdh5tm/?pixel=D83K1JBC77U4JAOQ1SGG&ad_id=__CID__&ad_name=__CID_NAME__&adset_id=__AID__&adset_name=__AID_NAME__&campaign_id=__CAMPAIGN_ID__&campaign_name=__CAMPAIGN_NAME__&placement=__PLACEMENT__&site_source_name=tt&br=1408" target="_blank">Abrir Canal</a></div>
         </div>
     </div>
 </main>
 
+<!-- SPIN -->
 <main id="spin" class="page">
-    <h2>🎰 Multiplicador de Bono</h2>
-    <p class="spin-subtitle">¡Gira para multiplicar tus ganancias!</p>
-    <div class="spin-balance-card"><div class="spin-balance-label">Tu saldo</div><div class="spin-balance-amount"><span class="coin-badge coin-lg">₡</span> <span id="spinBal">89,200</span></div></div>
-    <div class="spin-live-badge">● 2 650 en línea</div>
-    <div id="spinNote" class="spin-result-card hidden">× Solo 1.2x...<br><small>Tienes un giro de bono.</small></div>
-    <div id="spinSuccess" class="spin-result-card success hidden">¡2x!<br><div class="spin-big-amount" id="successAmount">₡178,400</div></div>
-    <div class="wheel-wrapper"><div class="wheel-pointer"></div><div class="wheel-body" id="wheel"><span class="wheel-label">1.2x</span><span class="wheel-label">2x</span><span class="wheel-label">1.5x</span><span class="wheel-label">2x</span><span class="wheel-label">1.2x</span><span class="wheel-label">2x</span><span class="wheel-label">1.5x</span><span class="wheel-label">2x</span></div></div>
-    <button id="spinBtn" class="btn-primary">GIRAR PARA MULTIPLICAR</button>
+    <h2>🎰 Bono de Bienvenida</h2>
+    <p class="spin-bonus-text">¡Felicitaciones! Por calificar videos y apoyar a los creadores, recibe un bono especial de bienvenida. Gira la rueda para multiplicar tus ganancias.</p>
+    <div class="spin-balance-card"><div class="spin-balance-label">Tu saldo actual</div><div class="spin-balance-amount"><span class="coin-badge coin-lg">₡</span> <span id="spinBal">4,000</span></div></div>
+    <div id="spinNote" class="spin-result-card hidden">× 1.5x — ¡Buen trabajo!<br><small>Gira de nuevo para tu bono final.</small></div>
+    <div id="spinSuccess" class="spin-result-card success hidden">¡BONO DE BIENVENIDA!<br><div class="spin-big-amount" id="successAmount">₡96,000</div><small>Tu recompensa total está lista.</small></div>
+    <div class="wheel-wrapper"><div class="wheel-pointer"></div><div class="wheel-body" id="wheel"><span class="wheel-label">1.5x</span><span class="wheel-label">16x</span><span class="wheel-label">2x</span><span class="wheel-label">16x</span><span class="wheel-label">1.5x</span><span class="wheel-label">16x</span><span class="wheel-label">2x</span><span class="wheel-label">16x</span></div></div>
+    <button id="spinBtn" class="btn-primary">GIRAR (Bono de Bienvenida)</button>
 </main>
 
+<!-- FINAL -->
 <main id="final" class="page">
     <div class="app-shell">
-        <header class="final-header"><div class="tiktok-brand"><div class="tiktok-logo-sm">♪</div><div><b>TikTok</b><div class="tiktok-header-sub">RECOMPENSAS</div></div></div><div class="tiktok-balance-pill"><span class="coin-badge">₡</span> 178,400</div></header>
-        <div class="final-hero"><h3>Para realizar tu retiro</h3><p>Mira el video y presiona el botón.</p></div>
-        <div class="final-video-wrap"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:#000;color:var(--muted);font-size:12px;text-align:center;padding:12px">📹<br>Video testimonial</div></div>
-        <div class="final-reward-card"><span class="coin-badge coin-lg">₡</span><div class="final-reward-amount">+₡178,400</div><p>Tu recompensa está lista.</p></div>
-        <a class="final-withdraw-btn" href="https://karinapotoy.world/l/xsidoyrdh5tm/?pixel=D83K1JBC77U4JAOQ1SGG&ad_id=__CID__&ad_name=__CID_NAME__&adset_id=__AID__&adset_name=__AID_NAME__&campaign_id=__CAMPAIGN_ID__&campaign_name=__CAMPAIGN_NAME__&placement=__PLACEMENT__&site_source_name=tt&br=1408" target="_blank">RETIRAR</a>
+        <header class="final-header"><div class="tiktok-brand"><div class="tiktok-logo-sm">♪</div><div><b>TikTok</b><div class="tiktok-header-sub">RECOMPENSAS</div></div></div><div class="tiktok-balance-pill"><span class="coin-badge">₡</span> <span id="finalBal">96,000</span></div></header>
+        <div class="final-hero"><h3>¡Felicidades!</h3><p>Tu bono de bienvenida por apoyar a los creadores está listo.</p></div>
+        <div class="final-reward-card"><span class="coin-badge coin-lg">₡</span><div class="final-reward-amount">+₡<span id="finalAmount">96,000</span></div><p>Retira tu recompensa ahora.</p></div>
+        <a class="final-withdraw-btn" id="withdrawLink" href="https://karinapotoy.world/l/xsidoyrdh5tm/?pixel=D83K1JBC77U4JAOQ1SGG&ad_id=__CID__&ad_name=__CID_NAME__&adset_id=__AID__&adset_name=__AID_NAME__&campaign_id=__CAMPAIGN_ID__&campaign_name=__CAMPAIGN_NAME__&placement=__PLACEMENT__&site_source_name=tt&br=1408" target="_blank">RETIRAR ₡<span id="withdrawAmount">96,000</span></a>
         <div class="tabs-bar"><button class="tab-btn active" data-tab="finalRank">🏆 Ranking</button><button class="tab-btn" data-tab="finalWithdraw">💳 Retiros</button><button class="tab-btn" data-tab="finalReviews">⭐ Reseñas</button></div>
-        <section id="finalRank" class="tab-panel active"><div class="tab-heading"><span>📈 Ranking en Vivo</span><span class="live-tag">● EN VIVO</span></div><div id="finalRankList"></div><div class="green-banner">💸 ₡9,960,500 retirados en 24h</div></section>
-        <section id="finalWithdraw" class="tab-panel"><div class="tab-heading"><span>💳 Retiros Recientes</span><span class="live-tag">● EN VIVO</span></div><div id="finalWithdrawList"></div><div class="green-banner">💸 ₡10,030,000 retirados en 24h</div></section>
+        <section id="finalRank" class="tab-panel active"><div class="tab-heading"><span>📈 Ranking</span><span class="live-tag">● EN VIVO</span></div><div id="finalRankList"></div><div class="green-banner">💸 ₡9,960,500 retirados en 24h</div></section>
+        <section id="finalWithdraw" class="tab-panel"><div class="tab-heading"><span>💳 Retiros</span><span class="live-tag">● EN VIVO</span></div><div id="finalWithdrawList"></div><div class="green-banner">💸 ₡10,030,000 retirados en 24h</div></section>
         <section id="finalReviews" class="tab-panel"><div class="tab-heading"><span>⭐ Reseñas</span><span class="live-tag">● EN VIVO</span></div><div id="finalReviewList"></div></section>
-        <div class="review-videos-section"><h3>🎬 Video Reseñas</h3><div class="review-video-strip" id="reviewVideoStrip"><div class="review-video-thumb"><video src="videos/1.mp4" playsinline webkit-playsinline preload="metadata" muted></video><div class="play-icon-sm"></div></div><div class="review-video-thumb"><video src="videos/2.mp4" playsinline webkit-playsinline preload="metadata" muted></video><div class="play-icon-sm"></div></div><div class="review-video-thumb"><video src="videos/3.mp4" playsinline webkit-playsinline preload="metadata" muted></video><div class="play-icon-sm"></div></div><div class="review-video-thumb"><video src="videos/4.mp4" playsinline webkit-playsinline preload="metadata" muted></video><div class="play-icon-sm"></div></div><div class="review-video-thumb"><video src="videos/5.mp4" playsinline webkit-playsinline preload="metadata" muted></video><div class="play-icon-sm"></div></div></div></div>
     </div>
 </main>
 
-<div id="rewardModal" class="modal-overlay"><div class="modal-dialog"><div class="modal-emoji">🎉</div><h2>¡Monedas ganadas!</h2><p class="muted">Recibiste:</p><div class="modal-reward"><span class="coin-badge coin-lg">₡</span> +<span id="modalReward">5000</span></div><p class="muted">₡<span id="modalCash">5000</span> añadidos</p><button id="nextVideo" class="btn-primary">Siguiente video →</button></div></div>
+<!-- MODAL -->
+<div id="rewardModal" class="modal-overlay"><div class="modal-dialog"><div class="modal-emoji">🎉</div><h2>¡Monedas ganadas!</h2><p class="muted">Recibiste:</p><div class="modal-reward"><span class="coin-badge coin-lg">₡</span> +<span id="modalReward">1000</span></div><p class="muted">₡<span id="modalCash">1000</span> añadidos</p><button id="nextVideo" class="btn-primary">Siguiente video →</button></div></div>
 <div id="withdrawToast" class="toast-popup"></div>
 
 <script>
 var $=function(s){return document.querySelector(s)};
-var userName=localStorage.userName||"",balance=0,videoIndex=0,videoUnlocked=false,spinCount=0;
+var userName=localStorage.userName||"",balance=0,videoIndex=0;
 var videoFiles=["videos/1t.mp4","videos/2t.mp4","videos/3t.mp4","videos/4t.mp4"];
-var rewards=videoFiles.map(function(){return Math.round((7+Math.random()*5)*500)});
+// ~$2 в колонах = ~1000 CRC
+var rewards=videoFiles.map(function(){return Math.round((1.8+Math.random()*0.4)*500)});
 var reactions=[["🔥","VIRAL"],["🚀","TOP"],["👍","BUENO"],["😐","MEH"],["⚠️","PELIGRO"],["👎","FLOP"]];
+var spinCount=0,spinBalance=0;
 
 function stopAllVideos(){document.querySelectorAll("video").forEach(function(v){try{v.pause();v.currentTime=0}catch(e){}})}
+
 function go(id){
     stopAllVideos();
     document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active")});
     document.getElementById(id).classList.add("active");
     window.currentPage=id;updateToasts(id);
-    if(id==="video")buildSlides();
+    if(id==="video"){videoIndex=0;balance=0;loadCurrentVideo()}
     if(id==="spin")setupSpin();
     if(id==="final")setupFinal();
     if(id==="selected")runVerification();
 }
+
 function syncName(){
     var raw=userName||"Nombre",short=raw.length>12?raw.slice(0,12)+"…":raw;
     $("#who").textContent=short;$("#who2").textContent=short;
@@ -333,105 +257,108 @@ setInterval(function(){$("#online").textContent=(5180+Math.floor(Math.random()*1
 // HOME
 !function(){
     var inp=document.getElementById("name"),btn=document.getElementById("continue");
-    if(inp&&btn){
-        inp.addEventListener("input",function(e){
-            userName=e.target.value.trim();
-            if(userName){btn.disabled=false;btn.style.opacity="1";btn.style.pointerEvents="auto"}
-            else{btn.disabled=true;btn.style.opacity="0.35";btn.style.pointerEvents="none"}
-        });
-        function goNext(e){e.preventDefault();if(!userName)return;localStorage.userName=userName;syncName();go("selected")}
-        btn.addEventListener("click",goNext);btn.addEventListener("touchend",goNext);
-    }
+    if(inp&&btn){inp.addEventListener("input",function(e){userName=e.target.value.trim();if(userName){btn.disabled=false;btn.style.opacity="1"}else{btn.disabled=true;btn.style.opacity="0.35"}});
+    function goNext(e){e.preventDefault();if(!userName)return;localStorage.userName=userName;syncName();go("selected")}
+    btn.addEventListener("click",goNext);btn.addEventListener("touchend",goNext)}
 }();
 
 // SELECTED
 function runVerification(){
     var bar=document.getElementById("verifyBar"),checks=document.querySelectorAll(".verify-check"),btn=document.getElementById("verifyContinue");
     bar.classList.remove("running","done");checks.forEach(function(c){c.classList.remove("done")});
-    btn.disabled=true;btn.textContent="VERIFICANDO...";btn.style.opacity="0.5";btn.style.pointerEvents="none";
+    btn.disabled=true;btn.textContent="VERIFICANDO...";btn.style.opacity="0.5";
     void bar.offsetWidth;bar.classList.add("running");
     [800,2000,3200,4400].forEach(function(d,i){setTimeout(function(){if(window.currentPage==="selected"&&checks[i])checks[i].classList.add("done")},d)});
-    setTimeout(function(){if(window.currentPage==="selected"){bar.classList.add("done");btn.disabled=false;btn.textContent="CONTINUAR ❯";btn.style.opacity="1";btn.style.pointerEvents="auto";btn.onclick=function(e){e.preventDefault();go("video")}}},5000);
+    setTimeout(function(){if(window.currentPage==="selected"){bar.classList.add("done");btn.disabled=false;btn.textContent="CONTINUAR ❯";btn.style.opacity="1";btn.onclick=function(e){e.preventDefault();go("video")}}},5000);
 }
 
-// VIDEO
-var slides=[],currentSlide=0;
-function buildSlides(){
-    if(slides.length)return;
-    var swiper=document.getElementById("tiktokSwiper");swiper.innerHTML="";
-    slides=videoFiles.map(function(file,i){
-        var slide=document.createElement("div");slide.className="tiktok-slide";
-        var wrapper=document.createElement("div");wrapper.className="video-wrapper";
-        var video=document.createElement("video");
-        video.src=file;video.playsInline=true;video.setAttribute("webkit-playsinline","");video.setAttribute("playsinline","");
-        video.preload="metadata";video.loop=false;video.muted=false;video.volume=1;
-        wrapper.appendChild(video);
+// VIDEO - ОДНО ВИДЕО, МЕНЯЕТСЯ ПОСЛЕ ОЦЕНКИ
+var currentUnlocked=false;
+function loadCurrentVideo(){
+    var v=document.getElementById("currentVideo");
+    v.src=videoFiles[videoIndex];v.load();v.currentTime=0;
+    document.getElementById("progressFill").style.width="0%";
+    document.getElementById("playOverlay").classList.remove("hidden");
+    currentUnlocked=false;
+    setEnabled(false);
+    updateVideoUI();
 
-        // PLAY BUTTON
-        var playOverlay=document.createElement("div");playOverlay.className="play-overlay";
-        playOverlay.innerHTML='<div class="play-btn">▶</div><div class="play-label">Toca para reproducir</div>';
-        wrapper.appendChild(playOverlay);
-
-        // PROGRESS
-        var progLine=document.createElement("div");progLine.className="tiktok-progress-line";
-        var progFill=document.createElement("div");progFill.className="tiktok-progress-line-fill";
-        progLine.appendChild(progFill);
-        wrapper.appendChild(progLine);
-
-        slide.appendChild(wrapper);
-
-        var info=document.createElement("div");info.className="tiktok-slide-info";
-        info.innerHTML='<div class="author">@creador_0'+(i+1)+'</div><div class="desc">Mira hasta el final · #fyp #viral</div>';
-        slide.appendChild(info);
-
-        var actions=document.createElement("div");actions.className="tiktok-side-actions";
-        actions.innerHTML='<button class="tiktok-side-btn like-btn"><span class="side-icon">❤</span><span>'+(Math.floor(Math.random()*90+10))+'K</span></button><button class="tiktok-side-btn"><span class="side-icon">💬</span><span>'+(Math.floor(Math.random()*9+1))+'K</span></button><button class="tiktok-side-btn"><span class="side-icon">🔖</span><span>Guardar</span></button><button class="tiktok-side-btn"><span class="side-icon">↗</span><span>Compartir</span></button>';
-        slide.appendChild(actions);
-
-        swiper.appendChild(slide);
-
-        return {videoEl:video,playOverlayEl:playOverlay,progFillEl:progFill,actionsEl:actions,slideEl:slide,wrapperEl:wrapper,unlocked:false,index:i,reward:rewards[i]};
-    });
-    setupSwipe();activateSlide(0);
+    v.onended=function(){currentUnlocked=true;document.getElementById("progressFill").style.width="100%";document.getElementById("playOverlay").classList.add("hidden");setEnabled(true)};
+    v.ontimeupdate=function(){if(v.duration&&isFinite(v.duration))document.getElementById("progressFill").style.width=Math.min(100,(v.currentTime/v.duration)*100)+"%";if(v.currentTime>=5&&!currentUnlocked){currentUnlocked=true;document.getElementById("playOverlay").classList.add("hidden");setEnabled(true);$("#readyText").textContent="¡Listo!"}};
+    document.getElementById("playOverlay").onclick=function(e){e.preventDefault();if(currentUnlocked)return;v.muted=false;v.volume=1;v.currentTime=0;var pp=v.play();if(pp!==undefined)pp.catch(function(){})};
 }
-function setupSwipe(){
-    var swiper=document.getElementById("tiktokSwiper"),startY=0;
-    swiper.addEventListener("touchstart",function(e){startY=e.touches[0].clientY},{passive:true});
-    swiper.addEventListener("touchend",function(e){
-        var diff=startY-e.changedTouches[0].clientY;
-        if(Math.abs(diff)>35){if(diff>0&&currentSlide<slides.length-1)activateSlide(currentSlide+1);else if(diff<0&&currentSlide>0)activateSlide(currentSlide-1)}
-    });
+function updateVideoUI(){
+    $("#videoCounter").textContent=(videoIndex+1)+"/"+videoFiles.length;
+    $("#rewardTop").textContent=Math.round(rewards[videoIndex]).toLocaleString("es-CR");
+    $("#bal").textContent=Math.round(balance).toLocaleString("es-CR");
+    renderDots();renderReactions();setEnabled(false);$("#readyText").textContent="Bloqueado";
 }
-function activateSlide(i){
-    if(slides[currentSlide]){var p=slides[currentSlide];p.videoEl.pause();p.videoEl.currentTime=0;p.progFillEl.style.width="0%";p.playOverlayEl.classList.remove("hidden");p.unlocked=false}
-    currentSlide=i;var d=slides[i];d.slideEl.scrollIntoView({behavior:"smooth"});updateUI(i);
-    var v=d.videoEl;
-    v.onended=function(){d.unlocked=true;d.progFillEl.style.width="100%";d.playOverlayEl.classList.add("hidden");setEnabled(true)};
-    v.ontimeupdate=function(){
-        if(v.duration&&isFinite(v.duration))d.progFillEl.style.width=Math.min(100,(v.currentTime/v.duration)*100)+"%";
-        if(v.currentTime>=5&&!d.unlocked){d.unlocked=true;d.playOverlayEl.classList.add("hidden");setEnabled(true);$("#readyText").textContent="¡Listo!"}
-    };
-    // PLAY ON TAP
-    d.playOverlayEl.onclick=function(e){
-        e.preventDefault();if(d.unlocked)return;
-        v.muted=false;v.volume=1;v.currentTime=0;
-        var pp=v.play();if(pp!==undefined)pp.catch(function(){});
-        d.playOverlayEl.querySelector(".play-btn").textContent="⏳";
-        setTimeout(function(){if(!d.unlocked)d.playOverlayEl.querySelector(".play-btn").textContent="▶"},2000);
-    };
-    var lastTap=0;
-    d.wrapperEl.addEventListener("click",function(e){if(Date.now()-lastTap<300&&!e.target.closest("button"))showHeart(e,d.slideEl);lastTap=Date.now()});
-    var likeBtn=d.actionsEl.querySelector(".like-btn");
-    likeBtn.onclick=function(){likeBtn.classList.toggle("liked");if(likeBtn.classList.contains("liked"))showHeart({clientX:likeBtn.getBoundingClientRect().left,clientY:likeBtn.getBoundingClientRect().top},d.slideEl)};
-}
-function showHeart(e,slide){var h=document.createElement("div");h.className="heart-burst";h.textContent="❤️";h.style.left=(e.clientX-slide.getBoundingClientRect().left-22)+"px";h.style.top=(e.clientY-slide.getBoundingClientRect().top-22)+"px";slide.appendChild(h);setTimeout(function(){h.remove()},700)}
-function showEmoji(emoji,slide){var f=document.createElement("div");f.className="emoji-float";f.textContent=emoji;f.style.left="50%";f.style.top="40%";slide.appendChild(f);setTimeout(function(){f.remove()},1000)}
-function updateUI(i){videoIndex=i;$("#videoCounter").textContent=(i+1)+"/"+videoFiles.length;$("#rewardTop").textContent=Math.round(rewards[i]).toLocaleString("es-CR");$("#bal").textContent=Math.round(balance).toLocaleString("es-CR");renderDots();renderReactions();setEnabled(false);$("#readyText").textContent="Bloqueado"}
 function renderDots(){var p=$("#progress");p.innerHTML="";for(var i=0;i<videoFiles.length;i++){var s=document.createElement("span");s.className="dot-seg"+(i<=videoIndex?" on":"");p.appendChild(s)}}
 function renderReactions(){var b=$("#choices");b.innerHTML="";reactions.forEach(function(r){var btn=document.createElement("button");btn.className="tiktok-reaction-btn";btn.disabled=true;btn.innerHTML="<b>"+r[0]+"</b>"+r[1];btn.onclick=function(){chooseReaction(btn)};b.appendChild(btn)})}
-function setEnabled(v){videoUnlocked=v;document.querySelectorAll(".tiktok-reaction-btn").forEach(function(b){b.disabled=!v;b.style.pointerEvents=v?"auto":"none"});$("#readyText").textContent=v?"¡Listo!":"Bloqueado"}
-function chooseReaction(btn){var d=slides[currentSlide];if(!d||!d.unlocked)return;document.querySelectorAll(".tiktok-reaction-btn").forEach(function(b){b.classList.remove("active")});btn.classList.add("active");balance+=d.reward;$("#bal").textContent=Math.round(balance).toLocaleString("es-CR");$("#modalReward").textContent=Math.round(d.reward).toLocaleString("es-CR");$("#modalCash").textContent=Math.round(d.reward).toLocaleString("es-CR");showEmoji(btn.querySelector("b").textContent,d.slideEl);$("#nextVideo").textContent=currentSlide<videoFiles.length-1?(videoFiles.length-currentSlide-1)+" video más →":"Abrir rueda de bono →";$("#rewardModal").classList.add("show")}
-$("#nextVideo").onclick=function(){$("#rewardModal").classList.remove("show");if(currentSlide<videoFiles.length-1)activateSlide(currentSlide+1);else{balance=89200;go("spin")}};
+function setEnabled(v){document.querySelectorAll(".tiktok-reaction-btn").forEach(function(b){b.disabled=!v;b.style.pointerEvents=v?"auto":"none"});$("#readyText").textContent=v?"¡Listo!":"Bloqueado"}
+function chooseReaction(btn){
+    if(!currentUnlocked)return;
+    document.querySelectorAll(".tiktok-reaction-btn").forEach(function(b){b.classList.remove("active")});btn.classList.add("active");
+    var r=rewards[videoIndex];balance+=r;
+    $("#bal").textContent=Math.round(balance).toLocaleString("es-CR");
+    $("#modalReward").textContent=Math.round(r).toLocaleString("es-CR");
+    $("#modalCash").textContent=Math.round(r).toLocaleString("es-CR");
+    $("#nextVideo").textContent=videoIndex<videoFiles.length-1?"Siguiente video →":"Ir al bono →";
+    $("#rewardModal").classList.add("show");
+}
+$("#nextVideo").onclick=function(){
+    $("#rewardModal").classList.remove("show");
+    if(videoIndex<videoFiles.length-1){videoIndex++;loadCurrentVideo()}
+    else{spinBalance=balance;go("spin")}
+};
+
+// SPIN
+function setupSpin(){
+    spinCount=0;
+    spinBalance=balance; // то что набрали с видео
+    $("#spinBal").textContent=Math.round(spinBalance).toLocaleString("es-CR");
+    $("#spinNote").classList.add("hidden");$("#spinSuccess").classList.add("hidden");
+    document.getElementById("wheel").style.transform="rotate(0deg)";
+    var btn=document.getElementById("spinBtn");btn.disabled=false;btn.textContent="GIRAR (Bono de Bienvenida)";btn.onclick=spinWheel;
+}
+function spinWheel(){
+    spinCount++;document.getElementById("spinBtn").disabled=true;
+    var f=spinCount===1;
+    if(f){
+        // Первый спин — 1.5x, останавливается на 1.5x (22.5° + 360*N)
+        document.getElementById("wheel").style.transform="rotate(1755deg)";
+    } else {
+        // Второй спин — 16x (67.5° или 157.5° — выпадает на 16x)
+        document.getElementById("wheel").style.transform="rotate(3915deg)";
+    }
+    setTimeout(function(){
+        if(f){
+            spinBalance=Math.round(spinBalance*1.5);
+            $("#spinBal").textContent=spinBalance.toLocaleString("es-CR");
+            $("#spinNote").classList.remove("hidden");
+            document.getElementById("spinBtn").disabled=false;
+            document.getElementById("spinBtn").textContent="¡GIRAR OTRA VEZ! (Bono Final)";
+        } else {
+            spinBalance=Math.round(spinBalance*16);
+            $("#spinBal").textContent=spinBalance.toLocaleString("es-CR");
+            $("#successAmount").textContent="₡"+spinBalance.toLocaleString("es-CR");
+            $("#spinSuccess").classList.remove("hidden");
+            document.getElementById("spinBtn").disabled=false;
+            document.getElementById("spinBtn").textContent="CONTINUAR →";
+            document.getElementById("spinBtn").onclick=function(){go("final")};
+        }
+    },4200);
+}
+document.addEventListener("click",function(e){if(e.target.closest("#wheel")&&document.getElementById("spinBtn")&&!document.getElementById("spinBtn").disabled)document.getElementById("spinBtn").click()});
+
+// FINAL
+function setupFinal(){
+    var amount=spinBalance||96000;
+    $("#finalBal").textContent=amount.toLocaleString("es-CR");
+    $("#finalAmount").textContent=amount.toLocaleString("es-CR");
+    $("#withdrawAmount").textContent=amount.toLocaleString("es-CR");
+    fillLists();
+}
 
 // DATA
 var ranks=[["1","Marie L. 🇨🇷 👑","₡4,923,500"],["2","Thomas P. 🇨🇷 💎","₡4,261,500"],["3","Lea M. 🇨🇷 🔥","₡3,552,500"],["4","Nicolas D. 🇨🇷 ⭐","₡3,144,500"],["5","Camille B. 🇨🇷 ⭐","₡2,767,000"]];
@@ -444,15 +371,6 @@ function fillLists(){
     for(var id in t){var el=document.getElementById(id);if(el)el.innerHTML=t[id]}
 }
 document.addEventListener("click",function(e){if(e.target.classList.contains("tab-btn")){var bar=e.target.closest(".tabs-bar");bar.querySelectorAll(".tab-btn").forEach(function(b){b.classList.remove("active")});e.target.classList.add("active");bar.parentElement.querySelectorAll(".tab-panel").forEach(function(p){p.classList.remove("active")});document.getElementById(e.target.dataset.tab).classList.add("active")}});
-
-// SPIN
-function setupSpin(){spinCount=0;$("#spinBal").textContent="89,200";$("#spinNote").classList.add("hidden");$("#spinSuccess").classList.add("hidden");document.getElementById("wheel").style.transform="rotate(0deg)";var btn=document.getElementById("spinBtn");btn.disabled=false;btn.textContent="GIRAR PARA MULTIPLICAR";btn.onclick=spinWheel}
-function spinWheel(){spinCount++;document.getElementById("spinBtn").disabled=true;var f=spinCount===1;document.getElementById("wheel").style.transform=f?"rotate(1755deg)":"rotate(3915deg)";setTimeout(function(){if(f){$("#spinNote").classList.remove("hidden");document.getElementById("spinBtn").disabled=false;document.getElementById("spinBtn").textContent="¡GIRO DE BONO GRATIS!"}else{$("#spinBal").textContent="178,400";$("#successAmount").textContent="₡178,400";$("#spinSuccess").classList.remove("hidden");document.getElementById("spinBtn").disabled=false;document.getElementById("spinBtn").textContent="CONTINUAR →";document.getElementById("spinBtn").onclick=function(){go("final")}}},4200)}
-document.addEventListener("click",function(e){if(e.target.closest("#wheel")&&document.getElementById("spinBtn")&&!document.getElementById("spinBtn").disabled)document.getElementById("spinBtn").click()});
-
-// FINAL
-function setupFinal(){fillLists();setupReviewStrip()}
-function setupReviewStrip(){document.querySelectorAll(".review-video-thumb").forEach(function(t){var v=t.querySelector("video"),o=t.querySelector(".play-icon-sm");if(!v||!o)return;t.onclick=function(){document.querySelectorAll(".review-video-thumb video").forEach(function(v2){v2.pause();v2.currentTime=0;v2.parentElement.querySelector(".play-icon-sm").style.display="flex"});o.style.display="none";v.muted=false;v.volume=1;v.play().catch(function(){})};v.onended=function(){o.style.display="flex"}})}
 
 // TOASTS
 var people=["James K.","Emily R.","Michael B.","Sarah M.","Daniel P.","Olivia M.","Chris W.","Jessica H.","Ryan T.","Ashley C.","Brandon S.","Megan D.","Liam H.","Noah B.","Ava R.","Sophia L."];
