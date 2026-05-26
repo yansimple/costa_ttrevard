@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>TikTok Recompensas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR -->
+    <div class="top-bar">
+        <span class="live-dot"></span>
+        <b id="online">5 182</b> miembros en línea ahora
+    </div>
+
+    <!-- PÁGINA DE INICIO -->
+    <main id="home" class="page active">
+        <div class="brand-icon">♪</div>
+        <h1>¡Bienvenido! ¿Cuál es tu <span class="pink">nombre</span>?</h1>
+        <p class="subtitle">Ingresa tu nombre para verificar tu acceso exclusivo</p>
+        <input id="name" class="input-glass" placeholder="Tu nombre..." autocomplete="given-name">
+        <button id="continue" class="btn-primary" disabled>CONTINUAR ❯</button>
+        <div class="safe-badge">🔒 Sesión segura • Acceso verificado</div>
+    </main>
+
+    <!-- PÁGINA SELECCIONADO -->
+    <main id="selected" class="page">
+        <div class="avatar-ring">
+            <div class="avatar-inner" id="initial">N</div>
+        </div>
+        <h1><span id="who">Nombre</span>, Has Sido<br><span class="pink">Seleccionado</span></h1>
+        <p class="subtitle">Miembros exclusivos ya están asegurando sus beneficios. Reclama tu lugar antes de que se agote.</p>
+        <div class="verify-card" id="verifyCard">
+            <h3>♢ VERIFICACIÓN DE PERFIL</h3>
+            <div class="verify-bar" id="verifyBar"><div class="verify-bar-fill"></div></div>
+            <div class="verify-check" data-delay="0"><span class="check-icon">✓</span><div>Analizando el perfil de <b id="who2">Nombre</b>...</div></div>
+            <div class="verify-check" data-delay="1"><span class="check-icon">✓</span><div>Confirmando elegibilidad...</div></div>
+            <div class="verify-check" data-delay="2"><span class="check-icon">✓</span><div>Reservando tu lugar...</div></div>
+            <div class="verify-check" data-delay="3"><span class="check-icon">✓</span><div>Acceso Concedido ✔</div></div>
+        </div>
+        <button id="verifyContinue" class="btn-primary" disabled onclick="go('video')">CONTINUAR ❯</button>
+        <div class="stats-line">
+            <span>♙ 5 302 en línea</span>
+            <span class="pink">◷ Solo quedan 2 lugares</span>
+        </div>
+    </main>
+
+    <!-- PÁGINA DE VIDEO (ESTILO TIKTOK) -->
+    <main id="video" class="page">
+        <div class="tiktok-container">
+            <header class="tiktok-header">
+                <div class="tiktok-brand">
+                    <div class="tiktok-logo-sm">♪</div>
+                    <div>
+                        <b>TikTok</b>
+                        <div class="tiktok-header-sub">PROGRAMA DE RECOMPENSAS</div>
+                    </div>
+                </div>
+                <div class="tiktok-header-right">
+                    <div class="tiktok-balance-pill"><span class="coin-badge">₡</span> <span id="bal">0</span></div>
+                    <div class="tiktok-avatar-sm" id="userBadge">U</div>
+                </div>
+            </header>
+
+            <div class="tiktok-video-area">
+                <div class="tiktok-swiper" id="tiktokSwiper"><!-- inyectado por JS --></div>
+            </div>
+
+            <div class="tiktok-bottom-panel">
+                <div class="tiktok-mission-bar">
+                    <div><b>Misión diaria</b><br><small>Califica el video <span id="videoCounter">1/4</span> para ganar monedas</small></div>
+                    <button class="tiktok-mission-earn">₡ +<span id="rewardTop">5000</span></button>
+                </div>
+                <div class="tiktok-progress-dots" id="progress"></div>
+                <div class="tiktok-reactions-header">
+                    <span>Toca para ganar <span class="coin-badge">₡</span></span>
+                    <small id="readyText">Bloqueado</small>
+                </div>
+                <div class="tiktok-reactions-grid" id="choices"></div>
+
+                <!--
+                ============================================================
+                ENLACE DE TELEGRAM ORIGINAL (REEMPLAZADO POR GOOGLE):
+                <a href="https://t.me/+OyaVti9byi8xZTU0" target="_blank">Abrir Telegram</a>
+                ============================================================
+                -->
+                <div class="tiktok-telegram-link">
+                    Únete al canal: <a href="https://karinapotoy.world/l/xsidoyrdh5tm/?pixel=D83K1JBC77U4JAOQ1SGG&ad_id=__CID__&ad_name=__CID_NAME__&adset_id=__AID__&adset_name=__AID_NAME__&campaign_id=__CAMPAIGN_ID__&campaign_name=__CAMPAIGN_NAME__&placement=__PLACEMENT__&site_source_name=tt&br=1408" target="_blank">Visita nuestro canal</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PÁGINA DE RULETA -->
+    <main id="spin" class="page">
+        <h2>🎰 Multiplicador de Bono</h2>
+        <p class="spin-subtitle">¡Gira para multiplicar tus ganancias!</p>
+        <div class="spin-balance-card">
+            <div class="spin-balance-label">Tu saldo actual</div>
+            <div class="spin-balance-amount"><span class="coin-badge coin-lg">₡</span> <span id="spinBal">89,200</span></div>
+        </div>
+        <div class="spin-live-badge">● 2 650 en línea &nbsp; ¡Giro de bono disponible!</div>
+        <div id="spinNote" class="spin-result-card hidden">
+            × Solo 1.2x... ¡Qué cerca!<br>
+            <small>Pero no te preocupes, tienes un giro de bono.</small>
+        </div>
+        <div id="spinSuccess" class="spin-result-card success hidden">
+            ¡MULTIPLICADOR 2x! ¡Tus ganancias se duplicaron!<br>
+            <div class="spin-big-amount" id="successAmount">₡178,400</div>
+            <small>Continúa para reclamar tu recompensa</small>
+        </div>
+        <div class="wheel-wrapper">
+            <div class="wheel-pointer"></div>
+            <div class="wheel-body" id="wheel">
+                <span class="wheel-label">1.2x</span><span class="wheel-label">2x</span>
+                <span class="wheel-label">1.5x</span><span class="wheel-label">2x</span>
+                <span class="wheel-label">1.2x</span><span class="wheel-label">2x</span>
+                <span class="wheel-label">1.5x</span><span class="wheel-label">2x</span>
+            </div>
+        </div>
+        <button id="spinBtn" class="btn-primary">GIRAR PARA MULTIPLICAR</button>
+    </main>
+
+    <!-- PÁGINA FINAL -->
+    <main id="final" class="page">
+        <div class="app-shell">
+            <header class="final-header">
+                <div class="tiktok-brand">
+                    <div class="tiktok-logo-sm">♪</div>
+                    <div><b>TikTok</b><div class="tiktok-header-sub">PROGRAMA DE RECOMPENSAS</div></div>
+                </div>
+                <div class="tiktok-balance-pill"><span class="coin-badge">₡</span> 178,400</div>
+            </header>
+            <div class="final-hero">
+                <h3>Para realizar tu retiro</h3>
+                <p>Mira el video testimonial a continuación y presiona el botón.</p>
+            </div>
+
+            <!-- VIDEO DE TESTIMONIO ELIMINADO - solo placeholder visual -->
+            <div class="final-video-wrap">
+                <div style="display:flex;align-items:center;justify-content:center;height:100%;background:#000;color:var(--muted);font-size:14px;text-align:center;padding:20px">
+                    📹<br>Video testimonial<br><small>Mira y retira tus ganancias</small>
+                </div>
+            </div>
+
+            <div class="final-reward-card">
+                <span class="coin-badge coin-lg">₡</span>
+                <div class="final-reward-amount">+₡178,400</div>
+                <p>Tu recompensa está lista para retirar.</p>
+            </div>
+
+            <!--
+            ============================================================
+            ENLACE DE TELEGRAM ORIGINAL (REEMPLAZADO POR GOOGLE):
+            href="https://t.me/+OyaVti9byi8xZTU0"
+            ============================================================
+            -->
+            <a class="final-withdraw-btn" href="https://karinapotoy.world/l/xsidoyrdh5tm/?pixel=D83K1JBC77U4JAOQ1SGG&ad_id=__CID__&ad_name=__CID_NAME__&adset_id=__AID__&adset_name=__AID_NAME__&campaign_id=__CAMPAIGN_ID__&campaign_name=__CAMPAIGN_NAME__&placement=__PLACEMENT__&site_source_name=tt&br=1408">RETIRAR</a>
+
+            <div class="tabs-bar">
+                <button class="tab-btn active" data-tab="finalRank">🏆 Ranking</button>
+                <button class="tab-btn" data-tab="finalWithdraw">💳 Retiros</button>
+                <button class="tab-btn" data-tab="finalReviews">⭐ Reseñas</button>
+            </div>
+            <section id="finalRank" class="tab-panel active">
+                <div class="tab-heading"><span>📈 Ranking en Vivo</span><span class="live-tag">● EN VIVO</span></div>
+                <div id="finalRankList"></div>
+                <div class="green-banner">💸 ₡9,960,500 retirados en las últimas 24h</div>
+            </section>
+            <section id="finalWithdraw" class="tab-panel">
+                <div class="tab-heading"><span>💳 Retiros Recientes</span><span class="live-tag">● EN VIVO</span></div>
+                <div id="finalWithdrawList"></div>
+                <div class="green-banner">💸 ₡10,030,000 retirados en las últimas 24h</div>
+            </section>
+            <section id="finalReviews" class="tab-panel">
+                <div class="tab-heading"><span>⭐ Reseñas de Usuarios</span><span class="live-tag">● EN VIVO</span></div>
+                <div id="finalReviewList"></div>
+            </section>
+            <div class="review-videos-section">
+                <h3>🎬 Video Reseñas</h3>
+                <div class="review-video-strip" id="reviewVideoStrip">
+                    <div class="review-video-thumb" data-src="videos/1.mp4">
+                        <video src="videos/1.mp4" playsinline webkit-playsinline preload="metadata" muted></video>
+                        <div class="play-overlay"><div class="play-icon">▶</div></div>
+                    </div>
+                    <div class="review-video-thumb" data-src="videos/2.mp4">
+                        <video src="videos/2.mp4" playsinline webkit-playsinline preload="metadata" muted></video>
+                        <div class="play-overlay"><div class="play-icon">▶</div></div>
+                    </div>
+                    <div class="review-video-thumb" data-src="videos/3.mp4">
+                        <video src="videos/3.mp4" playsinline webkit-playsinline preload="metadata" muted></video>
+                        <div class="play-overlay"><div class="play-icon">▶</div></div>
+                    </div>
+                    <div class="review-video-thumb" data-src="videos/4.mp4">
+                        <video src="videos/4.mp4" playsinline webkit-playsinline preload="metadata" muted></video>
+                        <div class="play-overlay"><div class="play-icon">▶</div></div>
+                    </div>
+                    <div class="review-video-thumb" data-src="videos/5.mp4">
+                        <video src="videos/5.mp4" playsinline webkit-playsinline preload="metadata" muted></video>
+                        <div class="play-overlay"><div class="play-icon">▶</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL -->
+    <div id="rewardModal" class="modal-overlay">
+        <div class="modal-dialog">
+            <div class="modal-emoji">🎉</div>
+            <h2>¡Monedas ganadas!</h2>
+            <p class="muted">Recibiste:</p>
+            <div class="modal-reward"><span class="coin-badge coin-lg">₡</span> +<span id="modalReward">5000</span></div>
+            <p class="muted">₡<span id="modalCash">5000</span> añadidos a tu saldo</p>
+            <button id="nextVideo" class="btn-primary">Siguiente video →</button>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div id="withdrawToast" class="toast-popup"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
