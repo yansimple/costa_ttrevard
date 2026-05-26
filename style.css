@@ -137,6 +137,8 @@ a { color: inherit; text-decoration: none; }
     align-items: center;
     justify-content: center;
     gap: 8px;
+    pointer-events: auto;
+    touch-action: manipulation;
 }
 
 .btn-primary:active {
@@ -147,6 +149,7 @@ a { color: inherit; text-decoration: none; }
 .btn-primary:disabled {
     opacity: 0.35;
     cursor: not-allowed;
+    pointer-events: none;
     transform: none;
 }
 
@@ -506,7 +509,6 @@ a { color: inherit; text-decoration: none; }
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.1s;
-    -webkit-tap-highlight-color: transparent;
 }
 
 .tiktok-side-btn:active {
@@ -535,7 +537,7 @@ a { color: inherit; text-decoration: none; }
     100% { transform: scale(1); }
 }
 
-/* УБРАН PLAY OVERLAY */
+/* PLAY OVERLAY - OCULTO */
 .tiktok-play-overlay {
     display: none;
 }
@@ -612,7 +614,7 @@ a { color: inherit; text-decoration: none; }
     gap: 6px;
 }
 
-/* ЯРКАЯ АНИМАЦИЯ ДЛЯ КНОПОК РЕАКЦИЙ */
+/* REACTION BUTTONS - GLOW ANIMATION */
 .tiktok-reaction-btn {
     padding: 10px 4px;
     border: 1px solid rgba(255,255,255,0.15);
@@ -640,31 +642,16 @@ a { color: inherit; text-decoration: none; }
     animation: none;
 }
 
-/* Анимация пульсации для активных кнопок */
 .tiktok-reaction-btn:not(:disabled) {
     animation: glowPulse 2s ease-in-out infinite;
     box-shadow: 0 0 12px rgba(255,45,85,0.3), inset 0 0 8px rgba(255,45,85,0.1);
 }
 
-.tiktok-reaction-btn:not(:disabled):nth-child(2) {
-    animation-delay: 0.3s;
-}
-
-.tiktok-reaction-btn:not(:disabled):nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-.tiktok-reaction-btn:not(:disabled):nth-child(4) {
-    animation-delay: 0.9s;
-}
-
-.tiktok-reaction-btn:not(:disabled):nth-child(5) {
-    animation-delay: 1.2s;
-}
-
-.tiktok-reaction-btn:not(:disabled):nth-child(6) {
-    animation-delay: 1.5s;
-}
+.tiktok-reaction-btn:not(:disabled):nth-child(2) { animation-delay: 0.3s; }
+.tiktok-reaction-btn:not(:disabled):nth-child(3) { animation-delay: 0.6s; }
+.tiktok-reaction-btn:not(:disabled):nth-child(4) { animation-delay: 0.9s; }
+.tiktok-reaction-btn:not(:disabled):nth-child(5) { animation-delay: 1.2s; }
+.tiktok-reaction-btn:not(:disabled):nth-child(6) { animation-delay: 1.5s; }
 
 @keyframes glowPulse {
     0%, 100% {
