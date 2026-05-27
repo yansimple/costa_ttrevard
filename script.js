@@ -7,10 +7,10 @@ let videoUnlocked = false;
 let spinCount = 0;
 
 const videoFiles = [
-    "videos/1t.mp4",
-    "videos/2t.mp4",
-    "videos/3t.mp4",
-    "videos/4t.mp4"
+    "./videos/1t.mp4",
+    "./videos/2t.mp4",
+    "/videos/3t.mp4",
+    "./videos/4t.mp4"
 ];
 
 function randomReward() {
