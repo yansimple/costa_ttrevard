@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>TikTok Recompensas</title>
+    <title>TikTok Rewards</title>
     <style>
         :root {
             --pink: #ff2d55;
@@ -143,54 +143,53 @@
 </head>
 <body>
 
-<div class="top-bar"><span class="live-dot"></span><b id="online">5 182</b> miembros en línea</div>
+<div class="top-bar"><span class="live-dot"></span><b id="online">5,182</b> members online</div>
 
 <!-- HOME -->
 <main id="home" class="page active">
     <div class="brand-icon">♪</div>
-    <h1>¡Bienvenido! ¿Cuál es tu <span class="pink">nombre</span>?</h1>
-    <p class="subtitle">Ingresa tu nombre para verificar tu acceso exclusivo</p>
-    <input id="name" class="input-glass" placeholder="Tu nombre..." autocomplete="given-name">
-    <button id="continue" class="btn-primary" disabled>CONTINUAR ❯</button>
-    <div class="safe-badge">🔒 Sesión segura • Acceso verificado</div>
+    <h1>Welcome! What's your <span class="pink">name</span>?</h1>
+    <p class="subtitle">Enter your name to verify your exclusive access</p>
+    <input id="name" class="input-glass" placeholder="Your name..." autocomplete="given-name">
+    <button id="continue" class="btn-primary" disabled>CONTINUE ❯</button>
+    <div class="safe-badge">🔒 Secure session • Verified access</div>
 </main>
 
 <!-- SELECTED -->
 <main id="selected" class="page">
     <div class="avatar-ring"><div class="avatar-inner" id="initial">N</div></div>
-    <h1><span id="who">Nombre</span>, Has Sido<br><span class="pink">Seleccionado</span></h1>
-    <p class="subtitle">Miembros exclusivos ya están asegurando sus beneficios.</p>
+    <h1><span id="who">Name</span>, You've Been<br><span class="pink">Selected</span></h1>
+    <p class="subtitle">Exclusive members are already securing their benefits.</p>
     <div class="verify-card" id="verifyCard">
-        <h3>♢ VERIFICACIÓN DE PERFIL</h3>
+        <h3>♢ PROFILE VERIFICATION</h3>
         <div class="verify-bar" id="verifyBar"><div class="verify-bar-fill"></div></div>
-        <div class="verify-check"><span class="check-icon">✓</span><div>Analizando <b id="who2">Nombre</b>...</div></div>
-        <div class="verify-check"><span class="check-icon">✓</span><div>Confirmando elegibilidad...</div></div>
-        <div class="verify-check"><span class="check-icon">✓</span><div>Reservando tu lugar...</div></div>
-        <div class="verify-check"><span class="check-icon">✓</span><div>Acceso Concedido ✔</div></div>
+        <div class="verify-check"><span class="check-icon">✓</span><div>Analyzing <b id="who2">Name</b>...</div></div>
+        <div class="verify-check"><span class="check-icon">✓</span><div>Confirming eligibility...</div></div>
+        <div class="verify-check"><span class="check-icon">✓</span><div>Reserving your spot...</div></div>
+        <div class="verify-check"><span class="check-icon">✓</span><div>Access Granted ✔</div></div>
     </div>
-    <button id="verifyContinue" class="btn-primary" disabled>VERIFICANDO...</button>
-    <div class="stats-line"><span>♙ 5 302 en línea</span><span class="pink">◷ 2 lugares</span></div>
+    <button id="verifyContinue" class="btn-primary" disabled>VERIFYING...</button>
+    <div class="stats-line"><span>♙ 5,302 online</span><span class="pink">◷ 2 spots left</span></div>
 </main>
 
 <!-- VIDEO -->
 <main id="video" class="page">
     <div class="tiktok-container">
         <header class="tiktok-header">
-            <div class="tiktok-brand"><div class="tiktok-logo-sm">♪</div><div><b>TikTok</b><div class="tiktok-header-sub">RECOMPENSAS</div></div></div>
+            <div class="tiktok-brand"><div class="tiktok-logo-sm">♪</div><div><b>TikTok</b><div class="tiktok-header-sub">REWARDS</div></div></div>
             <div class="tiktok-header-right"><div class="tiktok-balance-pill"><span class="coin-badge">₡</span> <span id="bal">0</span></div><div class="tiktok-avatar-sm" id="userBadge">U</div></div>
         </header>
         <div class="tiktok-video-area" id="videoArea">
-            <!-- single video, меняется через JS -->
             <div class="video-wrapper" id="videoWrapper">
                 <video id="currentVideo" playsinline webkit-playsinline preload="metadata" loop="false" muted="false"></video>
-                <div class="play-overlay" id="playOverlay"><div class="play-btn">▶</div><div class="play-label">Toca para reproducir</div></div>
+                <div class="play-overlay" id="playOverlay"><div class="play-btn">▶</div><div class="play-label">Tap to play</div></div>
                 <div class="tiktok-progress-line"><div class="tiktok-progress-line-fill" id="progressFill"></div></div>
             </div>
         </div>
         <div class="tiktok-bottom-panel">
-            <div class="tiktok-mission-bar"><div><b>Misión diaria</b><br><small>Califica <span id="videoCounter">1/4</span></small></div><button class="tiktok-mission-earn">₡ +<span id="rewardTop">1000</span></button></div>
+            <div class="tiktok-mission-bar"><div><b>Daily mission</b><br><small>Rate <span id="videoCounter">1/4</span></small></div><button class="tiktok-mission-earn">₡ +<span id="rewardTop">1000</span></button></div>
             <div class="tiktok-progress-dots" id="progress"></div>
-            <div class="tiktok-reactions-header"><span>Toca para ganar <span class="coin-badge">₡</span></span><small id="readyText">Bloqueado</small></div>
+            <div class="tiktok-reactions-header"><span>Tap to earn <span class="coin-badge">₡</span></span><small id="readyText">Locked</small></div>
             <div class="tiktok-reactions-grid" id="choices"></div>
         </div>
     </div>
@@ -198,40 +197,40 @@
 
 <!-- SPIN -->
 <main id="spin" class="page">
-    <h2>🎰 Bono de Bienvenida</h2>
-    <p class="spin-bonus-text">¡Felicitaciones! Por calificar videos y apoyar a los creadores, recibe un bono especial de bienvenida. Gira la rueda para multiplicar tus ganancias.</p>
-    <div class="spin-balance-card"><div class="spin-balance-label">Tu saldo actual</div><div class="spin-balance-amount"><span class="coin-badge coin-lg">₡</span> <span id="spinBal">4,000</span></div></div>
-    <div id="spinNote" class="spin-result-card hidden">× 1.5x — ¡Buen trabajo!<br><small>Gira de nuevo para tu bono final.</small></div>
-    <div id="spinSuccess" class="spin-result-card success hidden">¡BONO DE BIENVENIDA!<br><div class="spin-big-amount" id="successAmount">₡96,000</div><small>Tu recompensa total está lista.</small></div>
+    <h2>🎰 Welcome Bonus</h2>
+    <p class="spin-bonus-text">Congratulations! By rating videos and supporting creators, receive a special welcome bonus. Spin the wheel to multiply your earnings.</p>
+    <div class="spin-balance-card"><div class="spin-balance-label">Your current balance</div><div class="spin-balance-amount"><span class="coin-badge coin-lg">₡</span> <span id="spinBal">4,000</span></div></div>
+    <div id="spinNote" class="spin-result-card hidden">× 1.5x — Great job!<br><small>Spin again for your final bonus.</small></div>
+    <div id="spinSuccess" class="spin-result-card success hidden">WELCOME BONUS!<br><div class="spin-big-amount" id="successAmount">₡96,000</div><small>Your total reward is ready.</small></div>
     <div class="wheel-wrapper"><div class="wheel-pointer"></div><div class="wheel-body" id="wheel"><span class="wheel-label">1.5x</span><span class="wheel-label">16x</span><span class="wheel-label">2x</span><span class="wheel-label">16x</span><span class="wheel-label">1.5x</span><span class="wheel-label">16x</span><span class="wheel-label">2x</span><span class="wheel-label">16x</span></div></div>
-    <button id="spinBtn" class="btn-primary">GIRAR (Bono de Bienvenida)</button>
+    <button id="spinBtn" class="btn-primary">SPIN (Welcome Bonus)</button>
 </main>
 
 <!-- FINAL -->
 <main id="final" class="page">
     <div class="app-shell">
-        <header class="final-header"><div class="tiktok-brand"><div class="tiktok-logo-sm">♪</div><div><b>TikTok</b><div class="tiktok-header-sub">RECOMPENSAS</div></div></div><div class="tiktok-balance-pill"><span class="coin-badge">₡</span> <span id="finalBal">96,000</span></div></header>
-        <div class="final-hero"><h3>¡Felicidades!</h3><p>Tu bono de bienvenida por apoyar a los creadores está listo.</p></div>
-        <div class="final-reward-card"><span class="coin-badge coin-lg">₡</span><div class="final-reward-amount">+₡<span id="finalAmount">96,000</span></div><p>Retira tu recompensa ahora.</p></div>
-        <a class="final-withdraw-btn" id="withdrawLink" href="https://karinapotoy.world/l/xsidoyrdh5tm/?pixel=D83K1JBC77U4JAOQ1SGG&ad_id=__CID__&ad_name=__CID_NAME__&adset_id=__AID__&adset_name=__AID_NAME__&campaign_id=__CAMPAIGN_ID__&campaign_name=__CAMPAIGN_NAME__&placement=__PLACEMENT__&site_source_name=tt&br=1408" target="_blank">RETIRAR ₡<span id="withdrawAmount">96,000</span></a>
-        <div class="tabs-bar"><button class="tab-btn active" data-tab="finalRank">🏆 Ranking</button><button class="tab-btn" data-tab="finalWithdraw">💳 Retiros</button><button class="tab-btn" data-tab="finalReviews">⭐ Reseñas</button></div>
-        <section id="finalRank" class="tab-panel active"><div class="tab-heading"><span>📈 Ranking</span><span class="live-tag">● EN VIVO</span></div><div id="finalRankList"></div><div class="green-banner">💸 ₡9,960,500 retirados en 24h</div></section>
-        <section id="finalWithdraw" class="tab-panel"><div class="tab-heading"><span>💳 Retiros</span><span class="live-tag">● EN VIVO</span></div><div id="finalWithdrawList"></div><div class="green-banner">💸 ₡10,030,000 retirados en 24h</div></section>
-        <section id="finalReviews" class="tab-panel"><div class="tab-heading"><span>⭐ Reseñas</span><span class="live-tag">● EN VIVO</span></div><div id="finalReviewList"></div></section>
+        <header class="final-header"><div class="tiktok-brand"><div class="tiktok-logo-sm">♪</div><div><b>TikTok</b><div class="tiktok-header-sub">REWARDS</div></div></div><div class="tiktok-balance-pill"><span class="coin-badge">₡</span> <span id="finalBal">96,000</span></div></header>
+        <div class="final-hero"><h3>Congratulations!</h3><p>Your welcome bonus for supporting creators is ready.</p></div>
+        <div class="final-reward-card"><span class="coin-badge coin-lg">₡</span><div class="final-reward-amount">+₡<span id="finalAmount">96,000</span></div><p>Withdraw your reward now.</p></div>
+        <a class="final-withdraw-btn" id="withdrawLink" href="https://karinapotoy.world/l/xsidoyrdh5tm/?pixel=D83K1JBC77U4JAOQ1SGG&ad_id=__CID__&ad_name=__CID_NAME__&adset_id=__AID__&adset_name=__AID_NAME__&campaign_id=__CAMPAIGN_ID__&campaign_name=__CAMPAIGN_NAME__&placement=__PLACEMENT__&site_source_name=tt&br=1408" target="_blank">WITHDRAW ₡<span id="withdrawAmount">96,000</span></a>
+        <div class="tabs-bar"><button class="tab-btn active" data-tab="finalRank">🏆 Ranking</button><button class="tab-btn" data-tab="finalWithdraw">💳 Withdrawals</button><button class="tab-btn" data-tab="finalReviews">⭐ Reviews</button></div>
+        <section id="finalRank" class="tab-panel active"><div class="tab-heading"><span>📈 Ranking</span><span class="live-tag">● LIVE</span></div><div id="finalRankList"></div><div class="green-banner">💸 ₡9,960,500 withdrawn in 24h</div></section>
+        <section id="finalWithdraw" class="tab-panel"><div class="tab-heading"><span>💳 Withdrawals</span><span class="live-tag">● LIVE</span></div><div id="finalWithdrawList"></div><div class="green-banner">💸 ₡10,030,000 withdrawn in 24h</div></section>
+        <section id="finalReviews" class="tab-panel"><div class="tab-heading"><span>⭐ Reviews</span><span class="live-tag">● LIVE</span></div><div id="finalReviewList"></div></section>
     </div>
 </main>
 
 <!-- MODAL -->
-<div id="rewardModal" class="modal-overlay"><div class="modal-dialog"><div class="modal-emoji">🎉</div><h2>¡Monedas ganadas!</h2><p class="muted">Recibiste:</p><div class="modal-reward"><span class="coin-badge coin-lg">₡</span> +<span id="modalReward">1000</span></div><p class="muted">₡<span id="modalCash">1000</span> añadidos</p><button id="nextVideo" class="btn-primary">Siguiente video →</button></div></div>
+<div id="rewardModal" class="modal-overlay"><div class="modal-dialog"><div class="modal-emoji">🎉</div><h2>Coins earned!</h2><p class="muted">You received:</p><div class="modal-reward"><span class="coin-badge coin-lg">₡</span> +<span id="modalReward">1000</span></div><p class="muted">₡<span id="modalCash">1000</span> added</p><button id="nextVideo" class="btn-primary">Next video →</button></div></div>
 <div id="withdrawToast" class="toast-popup"></div>
 
 <script>
 var $=function(s){return document.querySelector(s)};
 var userName=localStorage.userName||"",balance=0,videoIndex=0;
 var videoFiles=["videos/1t.mp4","videos/2t.mp4","videos/3t.mp4","videos/4t.mp4"];
-// ~$2 в колонах = ~1000 CRC
+// ~$2 per column = ~1000 CRC
 var rewards=videoFiles.map(function(){return Math.round((1.8+Math.random()*0.4)*500)});
-var reactions=[["🔥","VIRAL"],["🚀","TOP"],["👍","BUENO"],["😐","MEH"],["⚠️","PELIGRO"],["👎","FLOP"]];
+var reactions=[["🔥","VIRAL"],["🚀","TOP"],["👍","GOOD"],["😐","MEH"],["⚠️","DANGER"],["👎","FLOP"]];
 var spinCount=0,spinBalance=0;
 
 function stopAllVideos(){document.querySelectorAll("video").forEach(function(v){try{v.pause();v.currentTime=0}catch(e){}})}
@@ -248,11 +247,11 @@ function go(id){
 }
 
 function syncName(){
-    var raw=userName||"Nombre",short=raw.length>12?raw.slice(0,12)+"…":raw;
+    var raw=userName||"Name",short=raw.length>12?raw.slice(0,12)+"…":raw;
     $("#who").textContent=short;$("#who2").textContent=short;
     $("#initial").textContent=raw[0].toUpperCase();$("#userBadge").textContent=raw[0].toUpperCase();
 }
-setInterval(function(){$("#online").textContent=(5180+Math.floor(Math.random()*160)).toLocaleString("es-CR")},1600);
+setInterval(function(){$("#online").textContent=(5180+Math.floor(Math.random()*160)).toLocaleString("en-US")},1600);
 
 // HOME
 !function(){
@@ -266,13 +265,13 @@ setInterval(function(){$("#online").textContent=(5180+Math.floor(Math.random()*1
 function runVerification(){
     var bar=document.getElementById("verifyBar"),checks=document.querySelectorAll(".verify-check"),btn=document.getElementById("verifyContinue");
     bar.classList.remove("running","done");checks.forEach(function(c){c.classList.remove("done")});
-    btn.disabled=true;btn.textContent="VERIFICANDO...";btn.style.opacity="0.5";
+    btn.disabled=true;btn.textContent="VERIFYING...";btn.style.opacity="0.5";
     void bar.offsetWidth;bar.classList.add("running");
     [800,2000,3200,4400].forEach(function(d,i){setTimeout(function(){if(window.currentPage==="selected"&&checks[i])checks[i].classList.add("done")},d)});
-    setTimeout(function(){if(window.currentPage==="selected"){bar.classList.add("done");btn.disabled=false;btn.textContent="CONTINUAR ❯";btn.style.opacity="1";btn.onclick=function(e){e.preventDefault();go("video")}}},5000);
+    setTimeout(function(){if(window.currentPage==="selected"){bar.classList.add("done");btn.disabled=false;btn.textContent="CONTINUE ❯";btn.style.opacity="1";btn.onclick=function(e){e.preventDefault();go("video")}}},5000);
 }
 
-// VIDEO - ОДНО ВИДЕО, МЕНЯЕТСЯ ПОСЛЕ ОЦЕНКИ
+// VIDEO - SINGLE VIDEO, CHANGES AFTER RATING
 var currentUnlocked=false;
 function loadCurrentVideo(){
     var v=document.getElementById("currentVideo");
@@ -284,26 +283,26 @@ function loadCurrentVideo(){
     updateVideoUI();
 
     v.onended=function(){currentUnlocked=true;document.getElementById("progressFill").style.width="100%";document.getElementById("playOverlay").classList.add("hidden");setEnabled(true)};
-    v.ontimeupdate=function(){if(v.duration&&isFinite(v.duration))document.getElementById("progressFill").style.width=Math.min(100,(v.currentTime/v.duration)*100)+"%";if(v.currentTime>=5&&!currentUnlocked){currentUnlocked=true;document.getElementById("playOverlay").classList.add("hidden");setEnabled(true);$("#readyText").textContent="¡Listo!"}};
+    v.ontimeupdate=function(){if(v.duration&&isFinite(v.duration))document.getElementById("progressFill").style.width=Math.min(100,(v.currentTime/v.duration)*100)+"%";if(v.currentTime>=5&&!currentUnlocked){currentUnlocked=true;document.getElementById("playOverlay").classList.add("hidden");setEnabled(true);$("#readyText").textContent="Ready!"}};
     document.getElementById("playOverlay").onclick=function(e){e.preventDefault();if(currentUnlocked)return;v.muted=false;v.volume=1;v.currentTime=0;var pp=v.play();if(pp!==undefined)pp.catch(function(){})};
 }
 function updateVideoUI(){
     $("#videoCounter").textContent=(videoIndex+1)+"/"+videoFiles.length;
-    $("#rewardTop").textContent=Math.round(rewards[videoIndex]).toLocaleString("es-CR");
-    $("#bal").textContent=Math.round(balance).toLocaleString("es-CR");
-    renderDots();renderReactions();setEnabled(false);$("#readyText").textContent="Bloqueado";
+    $("#rewardTop").textContent=Math.round(rewards[videoIndex]).toLocaleString("en-US");
+    $("#bal").textContent=Math.round(balance).toLocaleString("en-US");
+    renderDots();renderReactions();setEnabled(false);$("#readyText").textContent="Locked";
 }
 function renderDots(){var p=$("#progress");p.innerHTML="";for(var i=0;i<videoFiles.length;i++){var s=document.createElement("span");s.className="dot-seg"+(i<=videoIndex?" on":"");p.appendChild(s)}}
 function renderReactions(){var b=$("#choices");b.innerHTML="";reactions.forEach(function(r){var btn=document.createElement("button");btn.className="tiktok-reaction-btn";btn.disabled=true;btn.innerHTML="<b>"+r[0]+"</b>"+r[1];btn.onclick=function(){chooseReaction(btn)};b.appendChild(btn)})}
-function setEnabled(v){document.querySelectorAll(".tiktok-reaction-btn").forEach(function(b){b.disabled=!v;b.style.pointerEvents=v?"auto":"none"});$("#readyText").textContent=v?"¡Listo!":"Bloqueado"}
+function setEnabled(v){document.querySelectorAll(".tiktok-reaction-btn").forEach(function(b){b.disabled=!v;b.style.pointerEvents=v?"auto":"none"});$("#readyText").textContent=v?"Ready!":"Locked"}
 function chooseReaction(btn){
     if(!currentUnlocked)return;
     document.querySelectorAll(".tiktok-reaction-btn").forEach(function(b){b.classList.remove("active")});btn.classList.add("active");
     var r=rewards[videoIndex];balance+=r;
-    $("#bal").textContent=Math.round(balance).toLocaleString("es-CR");
-    $("#modalReward").textContent=Math.round(r).toLocaleString("es-CR");
-    $("#modalCash").textContent=Math.round(r).toLocaleString("es-CR");
-    $("#nextVideo").textContent=videoIndex<videoFiles.length-1?"Siguiente video →":"Ir al bono →";
+    $("#bal").textContent=Math.round(balance).toLocaleString("en-US");
+    $("#modalReward").textContent=Math.round(r).toLocaleString("en-US");
+    $("#modalCash").textContent=Math.round(r).toLocaleString("en-US");
+    $("#nextVideo").textContent=videoIndex<videoFiles.length-1?"Next video →":"Go to bonus →";
     $("#rewardModal").classList.add("show");
 }
 $("#nextVideo").onclick=function(){
@@ -315,36 +314,34 @@ $("#nextVideo").onclick=function(){
 // SPIN
 function setupSpin(){
     spinCount=0;
-    spinBalance=balance; // то что набрали с видео
-    $("#spinBal").textContent=Math.round(spinBalance).toLocaleString("es-CR");
+    spinBalance=balance; // what was earned from videos
+    $("#spinBal").textContent=Math.round(spinBalance).toLocaleString("en-US");
     $("#spinNote").classList.add("hidden");$("#spinSuccess").classList.add("hidden");
     document.getElementById("wheel").style.transform="rotate(0deg)";
-    var btn=document.getElementById("spinBtn");btn.disabled=false;btn.textContent="GIRAR (Bono de Bienvenida)";btn.onclick=spinWheel;
+    var btn=document.getElementById("spinBtn");btn.disabled=false;btn.textContent="SPIN (Welcome Bonus)";btn.onclick=spinWheel;
 }
 function spinWheel(){
     spinCount++;document.getElementById("spinBtn").disabled=true;
     var f=spinCount===1;
     if(f){
-        // Первый спин — 1.5x, останавливается на 1.5x (22.5° + 360*N)
         document.getElementById("wheel").style.transform="rotate(1755deg)";
     } else {
-        // Второй спин — 16x (67.5° или 157.5° — выпадает на 16x)
         document.getElementById("wheel").style.transform="rotate(3915deg)";
     }
     setTimeout(function(){
         if(f){
             spinBalance=Math.round(spinBalance*1.5);
-            $("#spinBal").textContent=spinBalance.toLocaleString("es-CR");
+            $("#spinBal").textContent=spinBalance.toLocaleString("en-US");
             $("#spinNote").classList.remove("hidden");
             document.getElementById("spinBtn").disabled=false;
-            document.getElementById("spinBtn").textContent="¡GIRAR OTRA VEZ! (Bono Final)";
+            document.getElementById("spinBtn").textContent="SPIN AGAIN! (Final Bonus)";
         } else {
             spinBalance=Math.round(spinBalance*16);
-            $("#spinBal").textContent=spinBalance.toLocaleString("es-CR");
-            $("#successAmount").textContent="₡"+spinBalance.toLocaleString("es-CR");
+            $("#spinBal").textContent=spinBalance.toLocaleString("en-US");
+            $("#successAmount").textContent="₡"+spinBalance.toLocaleString("en-US");
             $("#spinSuccess").classList.remove("hidden");
             document.getElementById("spinBtn").disabled=false;
-            document.getElementById("spinBtn").textContent="CONTINUAR →";
+            document.getElementById("spinBtn").textContent="CONTINUE →";
             document.getElementById("spinBtn").onclick=function(){go("final")};
         }
     },4200);
@@ -354,18 +351,18 @@ document.addEventListener("click",function(e){if(e.target.closest("#wheel")&&doc
 // FINAL
 function setupFinal(){
     var amount=spinBalance||96000;
-    $("#finalBal").textContent=amount.toLocaleString("es-CR");
-    $("#finalAmount").textContent=amount.toLocaleString("es-CR");
-    $("#withdrawAmount").textContent=amount.toLocaleString("es-CR");
+    $("#finalBal").textContent=amount.toLocaleString("en-US");
+    $("#finalAmount").textContent=amount.toLocaleString("en-US");
+    $("#withdrawAmount").textContent=amount.toLocaleString("en-US");
     fillLists();
 }
 
 // DATA
 var ranks=[["1","Marie L. 🇨🇷 👑","₡4,923,500"],["2","Thomas P. 🇨🇷 💎","₡4,261,500"],["3","Lea M. 🇨🇷 🔥","₡3,552,500"],["4","Nicolas D. 🇨🇷 ⭐","₡3,144,500"],["5","Camille B. 🇨🇷 ⭐","₡2,767,000"]];
-var withdrawals=[["Jessica M.","PayPal · 15 Ene","₡620,000"],["Brandon K.","CashApp · 14 Ene","₡445,250"],["Logan S.","Banco · ahora","₡175,500"],["Isabella R.","PayPal · 2 min","₡1,431,000"],["Mia C.","PayPal · 5 min","₡920,000"],["David L.","Zelle · 18 min","₡2,010,500"]];
-var reviewsData=[["Julia S.","1 día","¡Recibí mi primer retiro en 24 horas!"],["Mark T.","2 días","Fácil de usar, pagos rápidos."],["Sophie R.","3 días","¡Gran plataforma!"],["Lucas P.","5 días","¡Ya gané más de ₡1,000,000!"]];
+var withdrawals=[["Jessica M.","PayPal · Jan 15","₡620,000"],["Brandon K.","CashApp · Jan 14","₡445,250"],["Logan S.","Bank · now","₡175,500"],["Isabella R.","PayPal · 2 min","₡1,431,000"],["Mia C.","PayPal · 5 min","₡920,000"],["David L.","Zelle · 18 min","₡2,010,500"]];
+var reviewsData=[["Julia S.","1 day","I received my first withdrawal within 24 hours!"],["Mark T.","2 days","Easy to use, fast payouts."],["Sophie R.","3 days","Great platform!"],["Lucas P.","5 days","I've already earned over ₡1,000,000!"]];
 function fillLists(){
-    var t={finalRankList:ranks.map(function(r,i){var c="";if(i===1)c="silver";if(i===2)c="bronze";return'<div class="rank-item"><div class="rank-pos '+c+'">'+r[0]+'</div><div class="rank-info"><div class="rank-name">'+r[1]+'</div><div class="rank-badge">✅ Verificado</div></div><div class="rank-amount">'+r[2]+'</div></div>'}).join(""),
+    var t={finalRankList:ranks.map(function(r,i){var c="";if(i===1)c="silver";if(i===2)c="bronze";return'<div class="rank-item"><div class="rank-pos '+c+'">'+r[0]+'</div><div class="rank-info"><div class="rank-name">'+r[1]+'</div><div class="rank-badge">✅ Verified</div></div><div class="rank-amount">'+r[2]+'</div></div>'}).join(""),
     finalWithdrawList:withdrawals.map(function(w){return'<div class="withdraw-item"><div><b>'+w[0]+'</b><br><span style="color:var(--muted);font-size:10px">'+w[1]+'</span></div><div class="withdraw-amount">'+w[2]+'</div></div>'}).join(""),
     finalReviewList:reviewsData.map(function(r){return'<div class="review-card-item"><b>'+r[0]+'</b> <span style="color:var(--muted);float:right;font-size:10px">'+r[1]+'</span><br><span class="stars">⭐⭐⭐⭐⭐</span><p style="color:var(--muted);margin:3px 0 0;font-size:11px">'+r[2]+'</p></div>'}).join("")};
     for(var id in t){var el=document.getElementById(id);if(el)el.innerHTML=t[id]}
@@ -375,7 +372,7 @@ document.addEventListener("click",function(e){if(e.target.classList.contains("ta
 // TOASTS
 var people=["James K.","Emily R.","Michael B.","Sarah M.","Daniel P.","Olivia M.","Chris W.","Jessica H.","Ryan T.","Ashley C.","Brandon S.","Megan D.","Liam H.","Noah B.","Ava R.","Sophia L."];
 var cities=["San José","Alajuela","Cartago","Heredia","Guanacaste","Puntarenas","Limón","Escazú","Santa Ana","Tamarindo","Jacó","La Fortuna"];
-function showToast(){var box=document.getElementById("withdrawToast");if(!box||window.currentPage==="home")return;var n=people[Math.floor(Math.random()*people.length)],c=cities[Math.floor(Math.random()*cities.length)],a=Math.round(8000+Math.random()*417000).toLocaleString("es-CR");box.innerHTML='<div class="toast-avatar"></div><div class="toast-info"><div class="toast-name">'+n+'</div><div class="toast-location">'+c+', Costa Rica</div></div><div class="toast-value">+₡'+a+'</div>';box.classList.add("show");clearTimeout(window._th);window._th=setTimeout(function(){box.classList.remove("show")},2200)}
+function showToast(){var box=document.getElementById("withdrawToast");if(!box||window.currentPage==="home")return;var n=people[Math.floor(Math.random()*people.length)],c=cities[Math.floor(Math.random()*cities.length)],a=Math.round(8000+Math.random()*417000).toLocaleString("en-US");box.innerHTML='<div class="toast-avatar"></div><div class="toast-info"><div class="toast-name">'+n+'</div><div class="toast-location">'+c+', Costa Rica</div></div><div class="toast-value">+₡'+a+'</div>';box.classList.add("show");clearTimeout(window._th);window._th=setTimeout(function(){box.classList.remove("show")},2200)}
 function startToasts(){var box=document.getElementById("withdrawToast");if(!box||window.currentPage==="home"){if(box)box.classList.remove("show");clearTimeout(window._tl);return}clearTimeout(window._tl);function s(){window._tl=setTimeout(function(){showToast();s()},Math.floor(Math.random()*3000)+5000)}s()}
 function updateToasts(id){var box=document.getElementById("withdrawToast");if(!box)return;if(id==="home"){box.classList.remove("show");clearTimeout(window._tl);clearTimeout(window._th);return}startToasts()}
 
